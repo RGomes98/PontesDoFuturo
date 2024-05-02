@@ -14,16 +14,18 @@ export const calculateWinningCareer = (currentAnswers: CurrentAnswers) => {
     return obj;
   }, {});
 
-  const winningCareer = Object.keys(totalScoresByCareer).reduce<{ career: string; score: number }>(
-    (winningCareer, career) => {
-      if (winningCareer.score < totalScoresByCareer[career]) {
-        winningCareer.career = career;
-        winningCareer.score = totalScoresByCareer[career];
-      }
-      return winningCareer;
-    },
-    { career: '', score: 0 }
-  );
+  const winningCareer = Object.keys(totalScoresByCareer)
+    .map((key) => {
+      return { [key]: totalScoresByCareer[key] };
+    })
+    .sort((a, b) => {
+      return Object.values(b)[0] - Object.values(a)[0];
+    })
+    .reduce<Record<string, number>[]>((b, a) => {
+      if (!b.length || Object.values(b[b.length - 1])[0] === Object.values(a)[0]) b.push(a);
+      return b;
+    }, [])
+    .sort(() => Math.random() - 0.5)[0];
 
   return winningCareer;
 };
