@@ -5,7 +5,7 @@ import type { Questions } from '@/types/Questions';
 export const questions: Questions[] = [
   {
     id: crypto.randomUUID(),
-    question: 'Você se sente confortável lidando com situações desafiadoras.',
+    question: 'Tenho facilidade em lidar com cálculos matemáticos e números.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -116,7 +116,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você se sente mais confortável trabalhando de forma independente.',
+    question: 'Tenho interesse por atividades que envolvem o uso da imaginação (como livros e filmes).',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -227,7 +227,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você acredita que ter habilidades de comunicação é essencial para o sucesso profissional.',
+    question: 'Tenho facilidade em me conectar e me relacionar com outras pessoas.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -338,7 +338,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você prefere seguir rotinas estabelecidas em vez de se adaptar a novos desafios.',
+    question: 'Gosto de lidar com situações em que o uso do raciocínio lógico é essencial.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -449,8 +449,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question:
-      'Você prefere seguir instruções detalhadas em vez de ter liberdade para tomar suas próprias decisões.',
+    question: 'Lido bem com situações que me colocam sob pressão.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -561,7 +560,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você prefere se especializar em uma área do que explorar várias.',
+    question: 'Sempre preferi atividades que me estimulam fisicamente, principalmente ao ar livre.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -672,7 +671,8 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você valoriza mais a realização pessoal em sua carreira.',
+    question:
+      'Tenho facilidade em me colocar no lugar de outra pessoa, mesmo tendo experiências de vida diferentes.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -783,7 +783,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você gosta de liderar outras pessoas.',
+    question: 'Lido bem com situações subjetivas, com margem para formas de interpretação variadas.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -894,7 +894,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você valoriza mais a estabilidade financeira em sua carreira.',
+    question: 'Gosto mais de trabalhar em grupo do que de trabalhar sozinho.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -1005,7 +1005,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você prefere tomar decisões baseadas em evidências tangíveis do que em suposições.',
+    question: 'Me considero uma pessoa artística.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -1116,7 +1116,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você prefere evitar conflitos a enfrentá-los diretamente.',
+    question: 'Gosto de participar de debates e de conversar sobre temas que muitas vezes são controversos.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -1227,7 +1227,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você se considera uma pessoa mais prática do que imaginativa.',
+    question: 'Prefiro lidar com assuntos objetivos ao invés de assuntos puramente teóricos.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -1338,7 +1338,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você prefere se concentrar em detalhes específicos em vez de pensar de forma mais ampla.',
+    question: 'Me considero uma pessoa metódica e organizada.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -1449,7 +1449,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você prefere focar em um projeto de cada vez do que lidar com várias tarefas simultaneamente.',
+    question: 'Você prefere se especializar em uma área do que explorar várias.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -1560,7 +1560,7 @@ export const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você tende a confiar mais em sua experiência pessoal do que em conselhos de terceiros.',
+    question: 'Você valoriza mais a estabilidade financeira em sua carreira.',
     answers: [
       {
         opinion: 'heavily-agree',
