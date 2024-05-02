@@ -1,20 +1,23 @@
 import { calculateWinningCareer } from '@/utils/calculateWinningCareer';
 import type { CareerScore, Opinion } from '@/types/Questions';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
-import { questions } from '@/data/questions';
+import { randomQuestions } from '@/data/questions';
 import { useState } from 'react';
 
 export const useCareerProfiler = () => {
   const [currentQuestionSlice, setCurrentQuestionSlice] = useState({ sliceStart: 0, sliceEnd: 5 });
   const [currentAnswers, setCurrentAnswers] = useState<CurrentAnswers>({});
 
-  const currentQuestions = questions.slice(currentQuestionSlice.sliceStart, currentQuestionSlice.sliceEnd);
-  const isQuestionnaireComplete = Object.keys(currentAnswers).length === questions.length;
+  const currentQuestions = randomQuestions.slice(
+    currentQuestionSlice.sliceStart,
+    currentQuestionSlice.sliceEnd
+  );
+  const isQuestionnaireComplete = Object.keys(currentAnswers).length === randomQuestions.length;
   const QUESTIONS_PER_SLICE = 5;
 
   const handleGoToNextSlice = () => {
     setCurrentQuestionSlice((prev) => {
-      if (prev.sliceEnd === questions.length) return { ...prev };
+      if (prev.sliceEnd === randomQuestions.length) return { ...prev };
 
       return {
         sliceEnd: prev.sliceEnd + QUESTIONS_PER_SLICE,
@@ -23,7 +26,7 @@ export const useCareerProfiler = () => {
     });
   };
 
-  const handleGoToNextPrevious = () => {
+  const handleGoToPreviousSlice = () => {
     setCurrentQuestionSlice((prev) => {
       if (prev.sliceStart === 0) return { ...prev };
 
@@ -47,8 +50,8 @@ export const useCareerProfiler = () => {
     currentQuestions,
     isQuestionnaireComplete,
     handleGoToNextSlice,
-    handleGoToNextPrevious,
     handleCalculateResults,
+    handleGoToPreviousSlice,
     handleSetCurrentAnswers,
   };
 };
