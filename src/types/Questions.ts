@@ -1,5 +1,7 @@
 export type Opinion = 'heavily-agree' | 'agree' | 'neutral' | 'disagree' | 'strongly-disagree';
 
+export type TotalScore = Record<string, number>;
+
 export type Career =
   | 'Medicina'
   | 'Odontologia'

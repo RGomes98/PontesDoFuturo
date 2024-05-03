@@ -1,31 +1,36 @@
+import type { CareerScore, TotalScore } from '@/types/Questions';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
-import type { CareerScore } from '@/types/Questions';
+import { shuffleArray } from './shuffleArray';
 
 export const calculateWinningCareer = (currentAnswers: CurrentAnswers) => {
-  const careerScores = Object.keys(currentAnswers).reduce<CareerScore[]>((arr, id) => {
-    const scores = currentAnswers[id].scores.map((score) => score);
-    arr.push(...scores);
-    return arr;
+  const careersScores = Object.keys(currentAnswers).reduce<CareerScore[]>((careersScores, answerId) => {
+    const score = currentAnswers[answerId].scores.map((score) => score);
+    careersScores.push(...score);
+    return careersScores;
   }, []);
 
-  const totalScoresByCareer = careerScores.reduce<Record<string, number>>((obj, { career, score }) => {
-    if (!obj[career]) obj[career] = 0;
-    obj[career] += score;
-    return obj;
+  const careersTotalScores = careersScores.reduce<TotalScore>((careersTotalScores, { career, score }) => {
+    if (!careersTotalScores[career]) careersTotalScores[career] = 0;
+    careersTotalScores[career] += score;
+    return careersTotalScores;
   }, {});
 
-  const winningCareer = Object.keys(totalScoresByCareer)
-    .map((key) => {
-      return { [key]: totalScoresByCareer[key] };
+  const winningCareers = Object.keys(careersTotalScores)
+    .map((careerKey) => {
+      return { [careerKey]: careersTotalScores[careerKey] };
     })
-    .sort((a, b) => {
-      return Object.values(b)[0] - Object.values(a)[0];
+    .sort((scoreA, scoreB) => {
+      const careerScoreA = Object.values(scoreA)[0];
+      const careerScoreB = Object.values(scoreB)[0];
+      return careerScoreA - careerScoreB;
     })
-    .reduce<Record<string, number>[]>((b, a) => {
-      if (!b.length || Object.values(b[b.length - 1])[0] === Object.values(a)[0]) b.push(a);
-      return b;
-    }, [])
-    .sort(() => Math.random() - 0.5)[0];
+    .reduce<TotalScore[]>((evenScores, score) => {
+      const lastCareerScore = Object.values(evenScores[evenScores.length - 1])[0];
+      const currentCareerScore = Object.values(score)[0];
+      const isScoresTied = lastCareerScore === currentCareerScore;
+      if (!evenScores.length || isScoresTied) evenScores.push(score);
+      return evenScores;
+    }, []);
 
-  return winningCareer;
+  return shuffleArray(winningCareers)[0];
 };

@@ -1,44 +1,37 @@
 import { calculateWinningCareer } from '@/utils/calculateWinningCareer';
 import type { CareerScore, Opinion } from '@/types/Questions';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
-import { randomQuestions } from '@/data/questions';
+import { randomizedQuestions } from '@/data/questions';
 import { useState } from 'react';
 
 export const useCareerProfiler = () => {
-  const [currentQuestionSlice, setCurrentQuestionSlice] = useState({ sliceStart: 0, sliceEnd: 5 });
+  const [currentQuestionSlice, setCurrentQuestionSlice] = useState({ start: 0, end: 5 });
   const [currentAnswers, setCurrentAnswers] = useState<CurrentAnswers>({});
 
-  const currentQuestions = randomQuestions.slice(
-    currentQuestionSlice.sliceStart,
-    currentQuestionSlice.sliceEnd
-  );
-  const isQuestionnaireComplete = Object.keys(currentAnswers).length === randomQuestions.length;
+  const currentQuestions = randomizedQuestions.slice(currentQuestionSlice.start, currentQuestionSlice.end);
+  const answeredQuestionsAmount = Object.keys(currentAnswers).length;
+
+  const questionsAmount = randomizedQuestions.length;
+  const isQuestionnaireComplete = answeredQuestionsAmount === questionsAmount;
+
   const QUESTIONS_PER_SLICE = 5;
 
-  const handleGoToNextSlice = () => {
-    setCurrentQuestionSlice((prev) => {
-      if (prev.sliceEnd === randomQuestions.length) return { ...prev };
-
-      return {
-        sliceEnd: prev.sliceEnd + QUESTIONS_PER_SLICE,
-        sliceStart: prev.sliceStart + QUESTIONS_PER_SLICE,
-      };
+  const handleGoToPreviousSlice = () => {
+    setCurrentQuestionSlice((slices) => {
+      if (slices.start === 0) return { ...slices };
+      return { end: slices.end - QUESTIONS_PER_SLICE, start: slices.start - QUESTIONS_PER_SLICE };
     });
   };
 
-  const handleGoToPreviousSlice = () => {
-    setCurrentQuestionSlice((prev) => {
-      if (prev.sliceStart === 0) return { ...prev };
-
-      return {
-        sliceEnd: prev.sliceEnd - QUESTIONS_PER_SLICE,
-        sliceStart: prev.sliceStart - QUESTIONS_PER_SLICE,
-      };
+  const handleGoToNextSlice = () => {
+    setCurrentQuestionSlice((slices) => {
+      if (slices.end === randomizedQuestions.length) return { ...slices };
+      return { end: slices.end + QUESTIONS_PER_SLICE, start: slices.start + QUESTIONS_PER_SLICE };
     });
   };
 
   const handleSetCurrentAnswers = (id: string, opinion: Opinion, scores: CareerScore[]) => {
-    setCurrentAnswers((prev) => ({ ...prev, [id]: { opinion, scores } }));
+    setCurrentAnswers((answers) => ({ ...answers, [id]: { opinion, scores } }));
   };
 
   const handleCalculateResults = () => {

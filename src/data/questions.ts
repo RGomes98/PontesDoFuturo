@@ -1,3 +1,4 @@
+import { shuffleArray } from '@/utils/shuffleArray';
 import type { Questions } from '@/types/Questions';
 
 const questions: Questions[] = [
@@ -1447,7 +1448,7 @@ const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você prefere se especializar em uma área do que explorar várias.',
+    question: 'Prefiro especializar-me em uma área do que explorar várias.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -1558,7 +1559,7 @@ const questions: Questions[] = [
   },
   {
     id: crypto.randomUUID(),
-    question: 'Você valoriza mais a estabilidade financeira em sua carreira.',
+    question: 'Valorizo mais a estabilidade financeira em minha carreira.',
     answers: [
       {
         opinion: 'heavily-agree',
@@ -1669,4 +1670,4 @@ const questions: Questions[] = [
   },
 ];
 
-export const randomQuestions = questions.sort(() => Math.random() - 0.5);
+export const randomizedQuestions = shuffleArray(questions);
