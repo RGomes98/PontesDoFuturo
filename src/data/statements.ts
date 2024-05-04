@@ -1,0 +1,17 @@
+export const statements = [
+  'Tenho facilidade em lidar com cálculos matemáticos e números.',
+  'Tenho interesse por atividades que envolvem o uso da imaginação (como livros e filmes).',
+  'Tenho facilidade em me conectar e me relacionar com outras pessoas.',
+  'Gosto de lidar com situações em que o uso do raciocínio lógico é essencial.',
+  'Lido bem com situações que me colocam sob pressão.',
+  'Sempre preferi atividades que me estimulam fisicamente, principalmente ao ar livre.',
+  'Tenho facilidade em me colocar no lugar de outra pessoa, mesmo tendo experiências de vida diferentes.',
+  'Lido bem com situações subjetivas, com margem para formas de interpretação variadas.',
+  'Gosto mais de trabalhar em grupo do que de trabalhar sozinho.',
+  'Me considero uma pessoa artística.',
+  'Gosto de participar de debates e de conversar sobre temas que muitas vezes são controversos.',
+  'Prefiro lidar com assuntos objetivos ao invés de assuntos puramente teóricos.',
+  'Me considero uma pessoa metódica e organizada.',
+  'Prefiro especializar-me em uma área do que explorar várias.',
+  'Valorizo mais a estabilidade financeira em minha carreira.',
+];

@@ -1,4 +1,4 @@
-import type { CareerScore, TotalScore } from '@/types/Questions';
+import type { CareerScore, TotalScore } from '@/types/CareerProfiler';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
 import { shuffleArray } from './shuffleArray';
 
