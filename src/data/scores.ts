@@ -1,4 +1,4 @@
-import { Career } from '@/types/CareerProfiler';
+import type { Career } from '@/types/CareerProfiler';
 
 export type ScoresKeys = (keyof typeof scores)[];
 
