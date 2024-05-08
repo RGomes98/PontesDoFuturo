@@ -2,24 +2,23 @@ export type Opinion = 'heavily-agree' | 'agree' | 'neutral' | 'disagree' | 'stro
 
 export type TotalScore = Record<string, number>;
 
-export enum Career {
-  'Design' = 'Design',
-  'Direito' = 'Direito',
-  'Nutrição' = 'Nutrição',
-  'Medicina' = 'Medicina',
-  'Enfermagem' = 'Enfermagem',
-  'Odontologia' = 'Odontologia',
-  'Administração' = 'Administração',
-  'Educação Física' = 'Educação Física',
-  'Engenharia Civil' = 'Engenharia Civil',
-  'Ciências Contábeis' = 'Ciências Contábeis',
-  'Engenharia Elétrica' = 'Engenharia Elétrica',
-  'Ciências Biológicas' = 'Ciências Biológicas',
-  'Engenharia Mecânica' = 'Engenharia Mecânica',
-  'Engenharia Ambiental' = 'Engenharia Ambiental',
-  'Engenharia de Produção' = 'Engenharia de Produção',
-  'Sistemas de Informação' = 'Sistemas de Informação',
-}
+export type Career =
+  | 'Design'
+  | 'Direito'
+  | 'Nutrição'
+  | 'Medicina'
+  | 'Enfermagem'
+  | 'Odontologia'
+  | 'Administração'
+  | 'Educação Física'
+  | 'Engenharia Civil'
+  | 'Ciências Contábeis'
+  | 'Engenharia Elétrica'
+  | 'Ciências Biológicas'
+  | 'Engenharia Mecânica'
+  | 'Engenharia Ambiental'
+  | 'Engenharia de Produção'
+  | 'Sistemas de Informação';
 
 export type CareerScore = {
   score: number;

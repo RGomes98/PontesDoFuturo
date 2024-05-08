@@ -2,7 +2,7 @@ import type { Career } from '@/types/CareerProfiler';
 
 export type ScoresKeys = (keyof typeof scores)[];
 
-export const scores: { [key in Career]: number[][] } = {
+export const scores: Record<Career, number[][]> = {
   Design: [
     [3, 1.5, 5, 7, 8],
     [5.5, 5.2, 5, 3, 1],

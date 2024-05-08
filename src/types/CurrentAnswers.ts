@@ -1,3 +1,3 @@
 import type { CareerScore, Opinion } from './CareerProfiler';
 
-export type CurrentAnswers = { [index: string]: { opinion: Opinion; scores: CareerScore[] } };
+export type CurrentAnswers = Record<string, { opinion: Opinion; scores: CareerScore[] }>;
