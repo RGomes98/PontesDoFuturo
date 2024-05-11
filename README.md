@@ -1,4 +1,4 @@
-# Projeto Integrador: Desenvolvimento do Site para a Escola Municipal Prof° Marizinha Félix
+# Projeto Integrador: Desenvolvimento do Site Pontes do Futuro
 
 Este repositório contém o código-fonte e os recursos relacionados ao projeto de desenvolvimento de um site para os alunos da Escola Municipal Prof° Marizinha Félix. O projeto é conduzido pelo curso de Medicina da instituição de ensino UniFOA - Centro Universitário de Volta Redonda, em colaboração com os cursos de Design e Sistemas de Informação, como parte de um projeto integrador.
 
