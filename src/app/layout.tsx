@@ -1,7 +1,7 @@
 import { Wix_Madefor_Text, Libre_Baskerville } from 'next/font/google';
 import type { Metadata } from 'next';
 
-import './globals.css';
+import '@/stylesheets/globals.scss';
 
 export const metadata: Metadata = {
   title: 'Pontes do Futuro',
