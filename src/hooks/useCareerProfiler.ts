@@ -1,50 +1,51 @@
 import { calculateWinningCareer } from '@/utils/calculateWinningCareer';
+import { generateCareerURLSlug } from '@/utils/generateCareerURLSlug';
 import type { CareerScore, Opinion } from '@/types/CareerProfiler';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
 import { careerProfiler } from '@/data/careerProfiler';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export const useCareerProfiler = () => {
-  const [currentQuestionSlice, setCurrentQuestionSlice] = useState({ start: 0, end: 5 });
+  const [careerProfilerSlice, setCareerProfilerSlice] = useState({ start: 0, end: 5 });
   const [currentAnswers, setCurrentAnswers] = useState<CurrentAnswers>({});
+  const { replace } = useRouter();
 
-  const currentQuestions = careerProfiler.slice(currentQuestionSlice.start, currentQuestionSlice.end);
-  const answeredQuestionsAmount = Object.keys(currentAnswers).length;
-
-  const questionsAmount = careerProfiler.length;
-  const isQuestionnaireComplete = answeredQuestionsAmount === questionsAmount;
-
-  const QUESTIONS_PER_SLICE = 5;
+  const statements = careerProfiler.slice(careerProfilerSlice.start, careerProfilerSlice.end);
+  const answeredStatementsAmount = Object.keys(currentAnswers).length;
+  const statementsAmount = careerProfiler.length;
+  const STATEMENTS_PER_SLICE = 5;
 
   const handleGoToPreviousSlice = () => {
-    setCurrentQuestionSlice((slices) => {
+    setCareerProfilerSlice((slices) => {
       if (slices.start === 0) return { ...slices };
-      return { end: slices.end - QUESTIONS_PER_SLICE, start: slices.start - QUESTIONS_PER_SLICE };
+      return { end: slices.end - STATEMENTS_PER_SLICE, start: slices.start - STATEMENTS_PER_SLICE };
     });
   };
 
   const handleGoToNextSlice = () => {
-    setCurrentQuestionSlice((slices) => {
+    setCareerProfilerSlice((slices) => {
       if (slices.end === careerProfiler.length) return { ...slices };
-      return { end: slices.end + QUESTIONS_PER_SLICE, start: slices.start + QUESTIONS_PER_SLICE };
+      return { end: slices.end + STATEMENTS_PER_SLICE, start: slices.start + STATEMENTS_PER_SLICE };
     });
   };
 
-  const handleSetCurrentAnswers = (id: string, opinion: Opinion, scores: CareerScore[]) => {
+  const handleUpdateAnswers = (id: string, opinion: Opinion, scores: CareerScore[]) => {
     setCurrentAnswers((answers) => ({ ...answers, [id]: { opinion, scores } }));
   };
 
   const handleCalculateResults = () => {
-    const winningCareer = calculateWinningCareer(currentAnswers);
+    const career = calculateWinningCareer(currentAnswers);
+    replace(`/curso/${generateCareerURLSlug(career)}`);
   };
 
   return {
+    statements,
     currentAnswers,
-    currentQuestions,
-    isQuestionnaireComplete,
+    isCareerProfilerComplete: answeredStatementsAmount === statementsAmount,
+    handleUpdateAnswers,
     handleGoToNextSlice,
     handleCalculateResults,
     handleGoToPreviousSlice,
-    handleSetCurrentAnswers,
   };
 };

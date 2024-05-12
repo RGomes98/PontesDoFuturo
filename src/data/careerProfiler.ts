@@ -1,12 +1,12 @@
-import type { CareerProfiler } from '@/types/CareerProfiler';
+import type { Career, CareerProfiler } from '@/types/CareerProfiler';
 import { shuffleArray } from '@/utils/shuffleArray';
-import { type ScoresKeys, scores } from './scores';
 import { statements } from './statements';
 import { opinions } from './opinions';
+import { scores } from './scores';
 
 const careerProfilerData: CareerProfiler = statements.map((statement, statementIndex) => {
   const answers = opinions.map((opinion, opinionIndex) => {
-    const careerScores = (Object.keys(scores) as ScoresKeys).map((career) => ({
+    const careerScores = (Object.keys(scores) as Career[]).map((career) => ({
       career,
       score: scores[career][statementIndex][opinionIndex],
     }));
