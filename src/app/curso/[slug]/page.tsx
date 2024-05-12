@@ -1,10 +1,6 @@
 import type { CareerURLSlug } from '@/utils/generateCareerURLSlug';
-import { redirect } from 'next/navigation';
-import { careers } from '@/data/careers';
+import { Career } from '@/routes/Career';
 
 export default function Page({ params: { slug } }: { params: { slug: CareerURLSlug } }) {
-  const career = careers[slug];
-  if (!career) redirect('/');
-
-  return <div>{career}</div>;
+  return <Career slug={slug} />;
 }
