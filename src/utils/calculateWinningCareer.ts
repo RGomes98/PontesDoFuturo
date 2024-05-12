@@ -1,6 +1,7 @@
-import type { CareerScore, TotalScore } from '@/types/CareerProfiler';
+import type { Career, CareerScore, TotalScore } from '@/types/CareerProfiler';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
 import { shuffleArray } from './shuffleArray';
+import { isScoresTied } from './isScoresTied';
 
 export const calculateWinningCareer = (currentAnswers: CurrentAnswers) => {
   const careersScores = Object.keys(currentAnswers).reduce<CareerScore[]>((careersScores, answerId) => {
@@ -22,15 +23,12 @@ export const calculateWinningCareer = (currentAnswers: CurrentAnswers) => {
     .sort((scoreA, scoreB) => {
       const careerScoreA = Object.values(scoreA)[0];
       const careerScoreB = Object.values(scoreB)[0];
-      return careerScoreA - careerScoreB;
+      return careerScoreB - careerScoreA;
     })
     .reduce<TotalScore[]>((evenScores, score) => {
-      const lastCareerScore = Object.values(evenScores[evenScores.length - 1])[0];
-      const currentCareerScore = Object.values(score)[0];
-      const isScoresTied = lastCareerScore === currentCareerScore;
-      if (!evenScores.length || isScoresTied) evenScores.push(score);
+      if (!evenScores.length || isScoresTied(score, evenScores)) evenScores.push(score);
       return evenScores;
     }, []);
 
-  return shuffleArray(winningCareers)[0];
+  return Object.keys(shuffleArray(winningCareers)[0])[0] as Career;
 };
