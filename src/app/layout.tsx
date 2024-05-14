@@ -1,4 +1,6 @@
 import { Wix_Madefor_Text, Libre_Baskerville } from 'next/font/google';
+import { Footer } from '@/components/Footer/Footer';
+import { Navbar } from '@/components/Navbar/Navbar';
 import type { Metadata } from 'next';
 
 import '@/stylesheets/globals.scss';
@@ -32,7 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR'>
-      <body className={`${wixMadeforText.variable} ${libreBaskerville.variable}`}>{children}</body>
+      <body className={`${wixMadeforText.variable} ${libreBaskerville.variable}`}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
