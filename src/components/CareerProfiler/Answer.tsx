@@ -7,11 +7,5 @@ type Answer = {
 };
 
 export const Answer = ({ opinion, isCurrentAnswerActive, handleUpdateAnswer }: Answer) => {
-  return (
-    <ul>
-      <li>
-        <button onClick={handleUpdateAnswer}>{opinion}</button>
-      </li>
-    </ul>
-  );
+  return <button onClick={handleUpdateAnswer}>{opinion}</button>;
 };

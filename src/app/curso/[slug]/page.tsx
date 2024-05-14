@@ -1,6 +1,6 @@
 import type { CareerURLSlug } from '@/utils/generateCareerURLSlug';
-import { Career } from '@/routes/Career';
+import { CareerPage } from '@/routes/CareerPage';
 
 export default function Page({ params: { slug } }: { params: { slug: CareerURLSlug } }) {
-  return <Career slug={slug} />;
+  return <CareerPage slug={slug} />;
 }

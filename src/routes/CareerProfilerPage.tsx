@@ -6,7 +6,7 @@ import { Answer } from '@/components/CareerProfiler/Answer';
 import { useMounted } from '@/hooks/useMounted';
 import { Fragment } from 'react';
 
-export const CareerProfiler = () => {
+export const CareerProfilerPage = () => {
   const { isMounted } = useMounted();
 
   const {

@@ -1,5 +1,5 @@
-import { CareerProfiler } from '@/routes/CareerProfiler';
+import { CareerProfilerPage } from '@/routes/CareerProfilerPage';
 
 export default function Page() {
-  return <CareerProfiler />;
+  return <CareerProfilerPage />;
 }
