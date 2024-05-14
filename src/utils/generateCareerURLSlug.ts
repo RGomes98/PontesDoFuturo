@@ -1,8 +1,6 @@
-import type { Career } from '@/types/CareerProfiler';
-
 export type CareerURLSlug = ReturnType<typeof generateCareerURLSlug>;
 
-export const generateCareerURLSlug = (career: Career) => {
+export const generateCareerURLSlug = (career: string) => {
   switch (career) {
     case 'Design':
       return 'design';

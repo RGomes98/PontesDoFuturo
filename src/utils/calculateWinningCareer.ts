@@ -1,4 +1,4 @@
-import type { Career, CareerScore, TotalScore } from '@/types/CareerProfiler';
+import type { CareerScore, TotalScore } from '@/types/CareerProfiler';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
 import { shuffleArray } from './shuffleArray';
 import { isScoresTied } from './isScoresTied';
@@ -30,5 +30,5 @@ export const calculateWinningCareer = (currentAnswers: CurrentAnswers) => {
       return evenScores;
     }, []);
 
-  return Object.keys(shuffleArray(winningCareers)[0])[0] as Career;
+  return Object.keys(shuffleArray(winningCareers)[0])[0];
 };
