@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang='pt-BR'>
       <body className={`${wixMadeforText.variable} ${libreBaskerville.variable}`}>
         <Navbar />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

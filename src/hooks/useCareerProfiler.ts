@@ -6,15 +6,16 @@ import { careerProfiler } from '@/data/careerProfiler';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+const STATEMENTS_PER_SLICE = 1;
+
 export const useCareerProfiler = () => {
-  const [careerProfilerSlice, setCareerProfilerSlice] = useState({ start: 0, end: 5 });
+  const [careerProfilerSlice, setCareerProfilerSlice] = useState({ start: 0, end: STATEMENTS_PER_SLICE });
   const [currentAnswers, setCurrentAnswers] = useState<CurrentAnswers>({});
   const { replace } = useRouter();
 
   const statements = careerProfiler.slice(careerProfilerSlice.start, careerProfilerSlice.end);
   const answeredStatementsAmount = Object.keys(currentAnswers).length;
   const statementsAmount = careerProfiler.length;
-  const STATEMENTS_PER_SLICE = 5;
 
   const handleGoToPreviousSlice = () => {
     setCareerProfilerSlice((slices) => {
