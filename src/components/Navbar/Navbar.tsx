@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export const Navbar = () => {
   return (
     <nav>
@@ -9,9 +7,9 @@ export const Navbar = () => {
         <li>Encontre seu Caminho</li>
       </ul>
       <div>
-        <Link href='https://www.unifoa.edu.br/'>LOGO UNIFOA</Link>
-        <Link href='https://www.instagram.com/unifoa'>LOGO INSTAGRAM</Link>
-        <Link href='https://www.instagram.com/medvr.79'>LOGO INSTAGRAM</Link>
+        <a href='https://www.unifoa.edu.br/'>LOGO UNIFOA</a>
+        <a href='https://www.instagram.com/unifoa'>LOGO INSTAGRAM</a>
+        <a href='https://www.instagram.com/medvr.79'>LOGO INSTAGRAM</a>
       </div>
     </nav>
   );

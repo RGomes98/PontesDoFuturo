@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import qrCodeEnem from '@/assets/images/qrcode-enem.png';
 
 export const EnrollGuide = () => {
   return (
@@ -29,13 +28,7 @@ export const EnrollGuide = () => {
             uma redação dissertativa-argumentativa, linguagens, ciências humanas, matemática e ciências da
             natureza. Para mais informações, acesse, no QR-code abaixo, o edital do ENEM
           </p>
-          <Image
-            width={300}
-            height={300}
-            quality={100}
-            alt='qrcode-enem'
-            src='/assets/images/qrcode-enem.png'
-          />
+          <img alt='qrcode-enem' src={qrCodeEnem} />
         </li>
         <li>
           <span>PROUNI</span>
@@ -46,8 +39,8 @@ export const EnrollGuide = () => {
             igual ou superior à nota de corte (que varia a cada ano). Além disso, é necessário ter cursado o
             Ensino Médio completo em escola pública ou em escola privada como bolsista integral. Os algoritmos
             do PROUNI também dão preferência a conceder bolsa para pessoas portadoras de alguma deficiência e
-            para funcionários públicos. Entre no site para saber mais!
-            <Link href='https://acessounico.mec.gov.br/prouni'>PROUNI</Link>
+            para funcionários públicos. Entre no site para saber mais!{' '}
+            <a href='https://acessounico.mec.gov.br/prouni'>PROUNI</a>
           </p>
         </li>
         <li>
@@ -82,9 +75,9 @@ export const EnrollGuide = () => {
             realizar a prova assim que concluir o Ensino Médio! Acesse aqui uma lista dos concursos e áreas
             que você pode ingressar assim que completar o ensino médio, sem necessidade de realizar o Ensino
             Superior{' '}
-            <Link href='https://www.estrategiaconcursos.com.br/blog/concursos-nivel-medio/'>
+            <a href='https://www.estrategiaconcursos.com.br/blog/concursos-nivel-medio/'>
               Concursos Nível Médio
-            </Link>{' '}
+            </a>{' '}
             O Concurso Público Nacional Unificado é o &quot;ENEM&quot; dos concursos públicos. Ele unifica
             todas as oportunidades de carreira em uma única prova. Acesse o site para saber mais sobre essa
             prova. /www.gov.br/gestao/pt-br/concursonacional
