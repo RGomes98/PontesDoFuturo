@@ -1,5 +1,3 @@
-'use client';
-
 import { Statement } from '@/components/CareerProfiler/Statement';
 import { useCareerProfiler } from '@/hooks/useCareerProfiler';
 import { Answer } from '@/components/CareerProfiler/Answer';
