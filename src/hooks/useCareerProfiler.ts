@@ -3,7 +3,7 @@ import { generateCareerURLSlug } from '@/utils/generateCareerURLSlug';
 import type { CareerScore, Opinion } from '@/types/CareerProfiler';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
 import { careerProfiler } from '@/data/careerProfiler';
-import { useRouter } from 'next/navigation';
+import { useNavigate } from '@tanstack/react-router';
 import { useState } from 'react';
 
 const STATEMENTS_PER_SLICE = 1;
@@ -11,7 +11,7 @@ const STATEMENTS_PER_SLICE = 1;
 export const useCareerProfiler = () => {
   const [careerProfilerSlice, setCareerProfilerSlice] = useState({ start: 0, end: STATEMENTS_PER_SLICE });
   const [currentAnswers, setCurrentAnswers] = useState<CurrentAnswers>({});
-  const { replace } = useRouter();
+  const navigate = useNavigate();
 
   const statements = careerProfiler.slice(careerProfilerSlice.start, careerProfilerSlice.end);
   const answeredStatementsAmount = Object.keys(currentAnswers).length;
@@ -37,7 +37,7 @@ export const useCareerProfiler = () => {
 
   const handleCalculateResults = () => {
     const career = calculateWinningCareer(currentAnswers);
-    replace(`/curso/${generateCareerURLSlug(career)}`);
+    navigate({ to: `/curso/${generateCareerURLSlug(career)}` });
   };
 
   return {
