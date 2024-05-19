@@ -8,11 +8,14 @@ export const CareerProfiler = () => {
     statements,
     currentAnswers,
     isCareerProfilerComplete,
+    isCareerProfilerResultLoading,
     handleUpdateAnswers,
     handleGoToNextSlice,
     handleCalculateResults,
     handleGoToPreviousSlice,
   } = useCareerProfiler();
+
+  if (isCareerProfilerResultLoading) return <h1>Gerando Resultado...</h1>;
 
   return (
     <Fragment>

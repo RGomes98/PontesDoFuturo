@@ -1,6 +1,7 @@
 import { calculateWinningCareer } from '@/utils/calculateWinningCareer';
 import { generateCareerURLSlug } from '@/utils/generateCareerURLSlug';
 import type { CareerScore, Opinion } from '@/types/CareerProfiler';
+import { createLoadingDelay } from '@/utils/createLoadingDelay';
 import type { CurrentAnswers } from '@/types/CurrentAnswers';
 import { careerProfiler } from '@/data/careerProfiler';
 import { useNavigate } from '@tanstack/react-router';
@@ -10,6 +11,7 @@ const STATEMENTS_PER_SLICE = 1;
 
 export const useCareerProfiler = () => {
   const [careerProfilerSlice, setCareerProfilerSlice] = useState({ start: 0, end: STATEMENTS_PER_SLICE });
+  const [isCareerProfilerResultLoading, setIsCareerProfilerResultLoading] = useState(false);
   const [currentAnswers, setCurrentAnswers] = useState<CurrentAnswers>({});
   const navigate = useNavigate();
 
@@ -35,14 +37,17 @@ export const useCareerProfiler = () => {
     setCurrentAnswers((answers) => ({ ...answers, [id]: { opinion, scores } }));
   };
 
-  const handleCalculateResults = () => {
+  const handleCalculateResults = async () => {
     const career = calculateWinningCareer(currentAnswers);
+    setIsCareerProfilerResultLoading(true);
+    await createLoadingDelay(5000);
     navigate({ to: `/curso/${generateCareerURLSlug(career)}` });
   };
 
   return {
     statements,
     currentAnswers,
+    isCareerProfilerResultLoading,
     isCareerProfilerComplete: answeredStatementsAmount === statementsAmount,
     handleUpdateAnswers,
     handleGoToNextSlice,
