@@ -10,5 +10,5 @@ function CareerPage() {
   const career = careers[slug];
 
   if (!career) Navigate({ to: '/', replace: true });
-  return <h1>{career}</h1>;
+  return <h1>{JSON.stringify(career)}</h1>;
 }
