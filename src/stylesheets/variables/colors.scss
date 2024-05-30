@@ -1,9 +1,28 @@
+//Gray Tonalities
+$magnolia: rgb(240, 240, 255);
+$cadet-gray: hsl(216, 10%, 50%);
+
 //Orange Tonalities
+$coral: hsl(14, 100%, 68%);
 $burnt-sienna: hsl(14, 83%, 59%);
 
+//White Tonalities
+$white: hsl(0, 0%, 100%);
+$ghost-white: hsl(230, 75%, 98%);
+
+//Black Tonalities
+$onyx: hsl(225, 10%, 25%);
+$raisin-black: hsl(225, 10%, 16%);
+
 //Yellow Tonalities
+$jasmine: hsl(44, 100%, 76%);
 $naples-yellow: hsl(44, 100%, 72%);
 
 //Blue Tonalities
 $maya-blue: hsl(206, 91%, 74%);
 $palatinate-blue: hsl(231, 74%, 53%);
+
+//Transparent Colors
+$transparent-black-3: hsla(0, 0%, 0%, 3%);
+$transparent-black-15: hsla(0, 0%, 0%, 15%);
+$transparent-black-20: hsla(0, 0%, 0%, 20%);

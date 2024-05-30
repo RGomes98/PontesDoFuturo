@@ -1,2 +1,18 @@
 @use 'variables' as var;
 @use 'reset';
+
+body {
+  font-size: var.$font-16;
+  color: var.$raisin-black;
+  font-weight: var.$regular;
+  background-color: var.$magnolia;
+  font-family: var.$wix-madefor-text-font;
+}
+
+.waves {
+  top: 0;
+  width: 100%;
+  fill: var.$white;
+  height: 14.063rem;
+  position: absolute;
+}
