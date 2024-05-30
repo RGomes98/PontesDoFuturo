@@ -1,4 +1,4 @@
-import qrCodeEnem from '@/assets/images/qrcode-enem.png';
+// import qrCodeEnem from '@/assets/images/qrcode-enem.png';
 
 export const EnrollGuide = () => {
   return (
@@ -28,7 +28,7 @@ export const EnrollGuide = () => {
             uma redação dissertativa-argumentativa, linguagens, ciências humanas, matemática e ciências da
             natureza. Para mais informações, acesse, no QR-code abaixo, o edital do ENEM
           </p>
-          <img alt='qrcode-enem' src={qrCodeEnem} />
+          {/* <img alt='qrcode-enem' src={qrCodeEnem} /> */}
         </li>
         <li>
           <span>PROUNI</span>
