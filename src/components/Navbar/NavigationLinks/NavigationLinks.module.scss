@@ -1,0 +1,23 @@
+@use '@/stylesheets/variables' as var;
+
+.list {
+  gap: 2rem;
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  text-wrap: nowrap;
+}
+
+.link {
+  text-decoration: none;
+  transition: 300ms ease;
+  color: var.$cadet-gray;
+  font-weight: var.$medium;
+  font-family: var.$poppins-font;
+
+  &:hover {
+    color: var.$raisin-black;
+  }
+}

@@ -1,0 +1,7 @@
+@use '@/stylesheets/variables' as var;
+
+.logo {
+  height: auto;
+  width: 14rem;
+  filter: var.$subtle-drop-shadow;
+}

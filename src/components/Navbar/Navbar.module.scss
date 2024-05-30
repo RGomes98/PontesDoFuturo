@@ -1,0 +1,17 @@
+@use '@/stylesheets/variables' as var;
+
+.navbar {
+  top: 0;
+  z-index: 100;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  padding: 2.5rem 10rem;
+  transition: ease 200ms;
+  justify-content: space-between;
+
+  &[data-transparent='true'] {
+    background-color: var.$white;
+    filter: var.$very-subtle-drop-shadow;
+  }
+}
