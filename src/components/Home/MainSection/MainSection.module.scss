@@ -1,0 +1,74 @@
+@use '@/stylesheets/variables' as var;
+
+.container {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  padding-block: 8.5rem;
+  background-size: 100%;
+  background-position: left;
+  padding-inline: 10rem 20rem;
+  background-repeat: no-repeat;
+  justify-content: space-between;
+  background-image: url('@/assets/images/svgs/whiteBlob.svg'), url('@/assets/images/svgs/coloredBlob.svg');
+}
+
+.mainWrapper {
+  gap: 3rem;
+  display: flex;
+  padding-top: 2rem;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logoWrapper {
+  gap: 1rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logoVertical {
+  width: 18.75rem;
+  filter: var.$subtle-drop-shadow;
+}
+
+.logoText {
+  font-size: var.$font-18;
+  font-weight: var.$medium;
+  text-transform: uppercase;
+  color: var.$palatinate-blue;
+  font-family: var.$poppins-font;
+  filter: var.$subtle-drop-shadow;
+}
+
+.heading {
+  font-size: 3rem;
+  max-width: 40rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var.$palatinate-blue;
+  font-family: var.$nunito-font;
+  filter: var.$subtle-drop-shadow;
+}
+
+.link {
+  width: fit-content;
+}
+
+.logoUnifoa {
+  width: 15rem;
+  filter: var.$subtle-drop-shadow;
+}
+
+.figure {
+  bottom: 0;
+  left: 6rem;
+  width: 35rem;
+  position: absolute;
+  filter: var.$subtle-drop-shadow;
+}

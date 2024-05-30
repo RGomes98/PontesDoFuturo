@@ -1,9 +1,7 @@
 import { createFileRoute, Navigate } from '@tanstack/react-router';
 import { careers } from '@/data/careers';
 
-export const Route = createFileRoute('/curso/$slug')({
-  component: CareerPage,
-});
+export const Route = createFileRoute('/curso/$slug')({ component: CareerPage });
 
 function CareerPage() {
   const { slug } = Route.useParams();

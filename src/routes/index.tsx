@@ -1,19 +1,8 @@
-import { CareerProfiler } from '@/components/CareerProfiler/CareerProfiler';
-import { EnrollGuide } from '@/components/Home/EnrollGuide';
 import { createFileRoute } from '@tanstack/react-router';
-import { About } from '@/components/Home/About';
-import { Fragment } from 'react';
+import { Home } from '@/components/Home/Home';
 
-export const Route = createFileRoute('/')({
-  component: HomePage,
-});
+export const Route = createFileRoute('/')({ component: HomePage });
 
 function HomePage() {
-  return (
-    <Fragment>
-      <About />
-      <CareerProfiler />
-      <EnrollGuide />
-    </Fragment>
-  );
+  return <Home />;
 }
