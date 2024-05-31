@@ -1,0 +1,63 @@
+@use '@/stylesheets/variables' as var;
+
+.container {
+  gap: 4rem;
+  display: grid;
+  align-items: center;
+  padding-block: 4rem;
+  justify-items: center;
+  padding-inline: 10rem;
+  background-color: var.$white;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.headingWrapper {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  gap: 1rem;
+  display: flex;
+  font-weight: 900;
+  line-height: 1.1;
+  align-items: center;
+  font-size: var.$font-48;
+  text-transform: uppercase;
+  color: var.$palatinate-blue;
+  font-family: var.$nunito-font;
+  filter: var.$subtle-drop-shadow;
+}
+
+.link {
+  margin-top: 0.55rem;
+
+  &:hover .logoInstagram {
+    scale: 1.1;
+  }
+}
+
+.logoInstagram {
+  width: 1.5rem;
+  fill: var.$cadet-gray;
+  transition: ease 200ms;
+}
+
+.subHeading {
+  max-width: 20rem;
+}
+
+.text {
+  max-width: 38rem;
+  color: var.$cadet-gray;
+  font-size: var.$font-24;
+  font-weight: var.$medium;
+}
+
+.medicineFigure {
+  width: 100%;
+  max-width: 45rem;
+  max-height: 45rem;
+  filter: var.$subtle-drop-shadow;
+}

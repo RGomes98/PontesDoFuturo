@@ -1,6 +1,12 @@
 @use 'variables' as var;
 @use 'reset';
 
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 body {
   font-size: var.$font-16;
   color: var.$raisin-black;
