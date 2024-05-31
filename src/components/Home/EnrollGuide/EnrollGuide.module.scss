@@ -1,0 +1,147 @@
+@use '@/stylesheets/variables' as var;
+
+.container {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  padding-inline: 15rem;
+  background-size: 100%;
+  flex-direction: column;
+  background-position: top;
+  padding-block: 16rem 8rem;
+  background-repeat: no-repeat;
+  background-color: var.$maya-blue;
+  background-image: url('@/assets/images/svgs/WavesLightBlue.svg');
+}
+
+.mainHeading {
+  display: flex;
+  font-weight: 900;
+  max-width: 35rem;
+  line-height: 1.1;
+  color: var.$onyx;
+  align-items: center;
+  font-size: var.$font-38;
+  text-transform: uppercase;
+  font-family: var.$nunito-font;
+  filter: var.$subtle-drop-shadow;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  list-style: none;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+
+.item {
+  gap: 2rem;
+  height: 100%;
+  display: flex;
+  padding: 4rem;
+  min-width: 100%;
+  text-align: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  flex-direction: column;
+  transition: translate 300ms ease-in-out;
+}
+
+.itemHeading {
+  gap: 0.8rem;
+  display: flex;
+  max-width: 35rem;
+  line-height: 1.1;
+  color: var.$onyx;
+  align-items: center;
+  font-weight: var.$bold;
+  font-size: var.$font-38;
+  text-transform: uppercase;
+  font-family: var.$poppins-font;
+}
+
+.helpLink {
+}
+
+.logoHelp {
+  width: 2.2rem;
+  height: 2.2rem;
+  fill: var.$onyx;
+  transition: ease 200ms;
+
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.itemText {
+  color: var.$onyx;
+  text-align: justify;
+  font-size: var.$font-18;
+}
+
+.fowardButton,
+.backwardButton {
+  cursor: pointer;
+  position: absolute;
+  border: transparent;
+  background-color: transparent;
+}
+
+.fowardButton {
+  left: 1rem;
+}
+
+.backwardButton {
+  right: 0;
+}
+
+.logoArrow {
+  width: 4rem;
+  height: 4rem;
+  fill: var.$white;
+  filter: var.$subtle-drop-shadow;
+  transition: scale ease-in-out 200ms;
+
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+.guideSelector {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  gap: 1rem;
+  display: flex;
+  position: absolute;
+  margin-inline: auto;
+  justify-content: center;
+}
+
+.selectButton {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all ease 200ms;
+  background-color: var.$white;
+  border: 2px solid transparent;
+  filter: var.$subtle-drop-shadow;
+
+  &:hover {
+    border-color: var.$white;
+    background-color: var.$transparent-black-15;
+  }
+
+  &[data-active='true'] {
+    border-color: var.$white;
+    background-color: var.$cadet-gray;
+  }
+}
