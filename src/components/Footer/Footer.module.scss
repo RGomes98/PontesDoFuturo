@@ -2,7 +2,7 @@
 
 .footer {
   display: flex;
-  margin-top: 2rem;
+  margin-top: auto;
   padding-inline: 10rem;
   align-items: flex-start;
   padding-block: 2rem 3rem;
@@ -45,7 +45,8 @@
 }
 
 .copyrightText {
-  color: var.$raisin-black;
+  color: var.$onyx;
+  font-weight: var.$medium;
   filter: var.$subtle-drop-shadow;
   letter-spacing: var.$letter-spacing-minus-0-18;
 }
