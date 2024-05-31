@@ -1,18 +1,19 @@
 @use '@/stylesheets/variables' as var;
 
 .list {
-  gap: 2rem;
+  gap: 1.5rem;
   display: flex;
   list-style: none;
 }
 
 .item {
+  padding: 0.5rem;
   text-wrap: nowrap;
 }
 
 .link {
   text-decoration: none;
-  transition: 300ms ease;
+  transition: 200ms ease;
   color: var.$cadet-gray;
   font-weight: var.$medium;
   font-family: var.$poppins-font;

@@ -1,3 +1,5 @@
+import { CareerMenu } from '../CareerMenu/CareerMenu';
+
 import styles from './NavigationLinks.module.scss';
 
 export const NavigationLinks = () => {
@@ -8,11 +10,7 @@ export const NavigationLinks = () => {
           Sobre Nós
         </a>
       </li>
-      <li className={styles.item}>
-        <a href='#' className={styles.link}>
-          Explorar Áreas
-        </a>
-      </li>
+      <CareerMenu />
       <li className={styles.item}>
         <a href='#' className={styles.link}>
           Encontre seu Caminho
