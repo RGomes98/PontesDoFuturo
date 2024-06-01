@@ -15,6 +15,7 @@ export const useOutsideClick = <I extends HTMLElement, T extends HTMLElement>(
     function handleClick(event: MouseEvent) {
       if (
         innerRef.current &&
+        triggerRef.current &&
         callbackRef.current &&
         event.target instanceof Node &&
         triggerRef.current !== event.target &&
