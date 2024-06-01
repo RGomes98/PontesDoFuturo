@@ -83,13 +83,14 @@
 .list {
   left: 0;
   display: flex;
-  bottom: -5.5rem;
+  bottom: -5.8rem;
   overflow: hidden;
   list-style: none;
   position: absolute;
   border-radius: 0.5rem;
   flex-direction: column;
   background-color: var.$white;
+  filter: var.$very-subtle-drop-shadow;
 }
 
 .item {
@@ -104,7 +105,7 @@
   align-items: center;
   text-decoration: none;
   transition: ease 200ms;
-  padding: 0.5rem 0.6rem 0.5rem 0.5rem;
+  padding: 0.6rem 0.6rem 0.6rem 0.5rem;
 
   &:hover {
     background-color: var.$ghost-white;
