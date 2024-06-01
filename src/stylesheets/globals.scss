@@ -1,6 +1,10 @@
 @use 'variables' as var;
 @use 'reset';
 
+html {
+  scroll-behavior: smooth;
+}
+
 #root {
   display: flex;
   min-height: 100vh;
