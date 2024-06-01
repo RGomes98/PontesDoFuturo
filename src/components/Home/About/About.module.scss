@@ -4,7 +4,7 @@
   gap: 4rem;
   display: grid;
   align-items: center;
-  padding-block: 4rem;
+  padding-block: 6rem;
   justify-items: center;
   padding-inline: 10rem;
   background-color: var.$white;
@@ -30,18 +30,102 @@
   filter: var.$subtle-drop-shadow;
 }
 
-.link {
-  margin-top: 0.55rem;
+.socialButton {
+  gap: 0.1rem;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  margin-top: 0.8rem;
+  border: transparent;
+  align-items: center;
+  border-radius: 0.2rem;
+  justify-content: center;
+  text-decoration: underline;
+  background-color: transparent;
+  text-decoration-color: var.$cadet-gray;
 
-  &:hover .logoInstagram {
-    scale: 1.1;
+  &:hover .buttonText {
+    color: var.$raisin-black;
+  }
+
+  &:hover .logoArrow {
+    fill: var.$raisin-black;
+  }
+
+  &:hover {
+    text-decoration-color: var.$raisin-black;
+  }
+}
+
+.buttonText {
+  pointer-events: none;
+  color: var.$cadet-gray;
+  transition: ease 200ms;
+  font-size: var.$font-16;
+  font-weight: var.$medium;
+  font-family: var.$poppins-font;
+}
+
+.logoArrow {
+  opacity: 0.9;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.3rem;
+  pointer-events: none;
+  fill: var.$cadet-gray;
+  transition: all ease 200ms;
+
+  &[data-active='true'] {
+    rotate: 180deg;
+  }
+}
+
+.list {
+  left: 0;
+  display: flex;
+  bottom: -5.5rem;
+  overflow: hidden;
+  list-style: none;
+  position: absolute;
+  border-radius: 0.5rem;
+  flex-direction: column;
+  background-color: var.$white;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+}
+
+.link {
+  width: 100%;
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: ease 200ms;
+  padding: 0.5rem 0.6rem 0.5rem 0.5rem;
+
+  &:hover {
+    background-color: var.$ghost-white;
   }
 }
 
 .logoInstagram {
-  width: 1.5rem;
+  min-width: 1.5rem;
+  max-width: 1.5rem;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
   fill: var.$cadet-gray;
-  transition: ease 200ms;
+}
+
+.linkText {
+  text-wrap: nowrap;
+  text-decoration: none;
+  font-weight: var.$bold;
+  color: var.$cadet-gray;
+  font-size: var.$font-14;
+  text-transform: uppercase;
 }
 
 .subHeading {
@@ -51,8 +135,9 @@
 .text {
   max-width: 38rem;
   color: var.$cadet-gray;
-  font-size: var.$font-24;
-  font-weight: var.$medium;
+  font-size: var.$font-20;
+  text-decoration: none;
+  font-family: var.$poppins-font;
 }
 
 .medicineFigure {
