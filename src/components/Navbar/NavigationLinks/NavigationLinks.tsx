@@ -1,4 +1,5 @@
 import { CareerMenu } from '../CareerMenu/CareerMenu';
+import { Link } from '@tanstack/react-router';
 
 import styles from './NavigationLinks.module.scss';
 
@@ -6,15 +7,15 @@ export const NavigationLinks = () => {
   return (
     <ul className={styles.list}>
       <li className={styles.item}>
-        <a href='#' className={styles.link}>
+        <Link to='/' hash='sobre-nos' className={styles.link}>
           Sobre Nós
-        </a>
+        </Link>
       </li>
       <CareerMenu />
       <li className={styles.item}>
-        <a href='#' className={styles.link}>
+        <Link to='/' hash='teste-vocacional' className={styles.link}>
           Encontre seu Caminho
-        </a>
+        </Link>
       </li>
     </ul>
   );

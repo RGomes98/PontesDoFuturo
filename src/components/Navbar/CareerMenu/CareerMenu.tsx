@@ -1,6 +1,7 @@
 import { groupCareersByCategory } from '@/utils/groupCareersByCategory';
 import { generateCareerURLSlug } from '@/utils/generateCareerURLSlug';
 import { useOutsideClick } from '@/hooks/useOutsideClick';
+import { Link } from '@tanstack/react-router';
 import { careers } from '@/data/careers';
 import { useState } from 'react';
 
@@ -37,9 +38,9 @@ export const CareerMenu = () => {
                 {groupedCareers[category].map((career) => {
                   return (
                     <li className={styles.careerItem} key={career}>
-                      <a className={styles.link} href={`/curso/${generateCareerURLSlug(career)}`}>
+                      <Link className={styles.link} to={`/curso/${generateCareerURLSlug(career)}`}>
                         {career}
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}
