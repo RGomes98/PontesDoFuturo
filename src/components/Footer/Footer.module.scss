@@ -1,6 +1,7 @@
 @use '@/stylesheets/variables' as var;
 
 .footer {
+  z-index: 5;
   display: flex;
   margin-top: auto;
   padding-inline: 10rem;
@@ -8,7 +9,6 @@
   padding-block: 2rem 3rem;
   background-color: var.$white;
   justify-content: space-between;
-  filter: var.$very-subtle-drop-shadow;
 }
 
 .copyrightWrapper {
@@ -19,28 +19,11 @@
   flex-direction: column;
 }
 
-.logoWrapper {
-  gap: 1rem;
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
-
-.logoItem {
-}
-
 .logoLink {
 }
 
 .logoUnifoa {
   width: 12rem;
-}
-.logoHorizontal {
-  width: 14rem;
-}
-
-.logoUnifoa,
-.logoHorizontal {
   filter: var.$subtle-drop-shadow;
 }
 
