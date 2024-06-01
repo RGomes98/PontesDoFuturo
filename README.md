@@ -10,6 +10,12 @@ Este repositório contém o código-fonte e os recursos relacionados ao projeto 
 
 O objetivo principal é criar uma plataforma interativa e informativa para os alunos da Escola Municipal Prof° Marizinha Félix. O site fornecerá informações relevantes sobre o ingresso em cursos, concursos públicos, cursos técnicos e outras oportunidades educacionais. Este projeto é parte integrante do currículo acadêmico e busca unir conhecimentos de diferentes áreas para a construção de uma solução abrangente e de qualidade.
 
+## Screenshots
+
+### Home
+
+![HomePage](./screenshots/home-page.png)
+
 ## Identidade Visual
 
 ![VisualIdentity](./screenshots/visual-identity.png)
