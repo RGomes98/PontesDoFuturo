@@ -12,6 +12,7 @@ const STATEMENTS_PER_SLICE = 1;
 export const useCareerProfiler = () => {
   const [careerProfilerSlice, setCareerProfilerSlice] = useState({ start: 0, end: STATEMENTS_PER_SLICE });
   const [isCareerProfilerResultLoading, setIsCareerProfilerResultLoading] = useState(false);
+  const [isCareerProfileActive, setIsCareerProfilerActive] = useState(false);
   const [currentAnswers, setCurrentAnswers] = useState<CurrentAnswers>({});
   const navigate = useNavigate();
 
@@ -37,6 +38,8 @@ export const useCareerProfiler = () => {
     setCurrentAnswers((answers) => ({ ...answers, [id]: { opinion, scores } }));
   };
 
+  const startCareerProfiler = () => setIsCareerProfilerActive(true);
+
   const handleCalculateResults = async () => {
     const career = calculateWinningCareer(currentAnswers);
     setIsCareerProfilerResultLoading(true);
@@ -47,10 +50,14 @@ export const useCareerProfiler = () => {
   return {
     statements,
     currentAnswers,
+    isCareerProfileActive,
     isCareerProfilerResultLoading,
+    statementsAmount: careerProfiler.length,
+    currentStatement: careerProfilerSlice.end,
     isCareerProfilerComplete: answeredStatementsAmount === statementsAmount,
     handleUpdateAnswers,
     handleGoToNextSlice,
+    startCareerProfiler,
     handleCalculateResults,
     handleGoToPreviousSlice,
   };
