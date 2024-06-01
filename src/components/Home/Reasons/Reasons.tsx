@@ -1,4 +1,4 @@
-import LogoSatisfied from '@/assets/logos/svgs/logo-satisfied.svg?react';
+import LogoVerySatisfied from '@/assets/logos/svgs/logo-very-satisfied.svg?react';
 import LogoTrophy from '@/assets/logos/svgs/logo-trophy.svg?react';
 import LogoHeart from '@/assets/logos/svgs/logo-heart.svg?react';
 import styles from './Reasons.module.scss';
@@ -9,7 +9,7 @@ export const Reasons = () => {
       <span className={styles.heading}>3 Razões para se dedicar no seu futuro</span>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <LogoSatisfied className={styles.logo} />
+          <LogoVerySatisfied className={styles.logo} />
           <span className={styles.itemHeading}>Realização</span>
           <p className={styles.text}>
             Buscar uma profissão é mais do que uma simples escolha; é um passo crucial em direção à realização

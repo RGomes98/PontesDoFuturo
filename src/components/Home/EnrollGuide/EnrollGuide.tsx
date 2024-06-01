@@ -18,16 +18,17 @@ export const EnrollGuide = () => {
     <section className={styles.container}>
       <span className={styles.mainHeading}>Conheça alguns Modelos Educacionais</span>
       <ul className={styles.list}>
-        {enrollGuideContent.map(({ title, content, extra }) => {
+        {enrollGuideContent.map(({ title, content, help }) => {
+          const helpButton = help && (
+            <a href={help} className={styles.helpLink}>
+              <LogoHelp className={styles.logoHelp} />
+            </a>
+          );
+
           return (
             <li className={styles.item} key={title} style={{ translate: `${-100 * currentGuideIndex}%` }}>
               <span className={styles.itemHeading}>
-                {title}{' '}
-                {extra && (
-                  <a href={extra} className={styles.helpLink}>
-                    <LogoHelp className={styles.logoHelp} />
-                  </a>
-                )}
+                {title} {helpButton}
               </span>
               <p className={styles.itemText}>{content}</p>
             </li>

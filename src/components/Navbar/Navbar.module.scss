@@ -10,7 +10,7 @@
   transition: ease 200ms;
   justify-content: space-between;
 
-  &[data-transparent='true'] {
+  &[data-visible='true'] {
     background-color: var.$white;
     filter: var.$very-subtle-drop-shadow;
   }

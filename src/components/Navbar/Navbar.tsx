@@ -8,7 +8,7 @@ export const Navbar = () => {
   const { isTriggerActivated } = useScrollLocationTrigger(50);
 
   return (
-    <nav className={styles.navbar} data-transparent={isTriggerActivated}>
+    <nav className={styles.navbar} data-visible={isTriggerActivated}>
       <LogoHorizontal />
       <NavigationLinks />
     </nav>

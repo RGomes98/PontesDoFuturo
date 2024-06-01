@@ -11,7 +11,7 @@
   background-size: 100%;
   flex-direction: column;
   background-position: top;
-  padding-block: 16rem 8rem;
+  padding-block: 14rem 8rem;
   background-repeat: no-repeat;
   background-color: var.$maya-blue;
   background-image: url('@/assets/images/svgs/WavesLightBlue.svg');
@@ -44,10 +44,10 @@
   gap: 2rem;
   height: 100%;
   display: flex;
-  padding: 4rem;
   min-width: 100%;
   text-align: center;
   align-items: center;
+  padding: 2rem 0 4rem;
   border-radius: 0.5rem;
   flex-direction: column;
   transition: translate 300ms ease-in-out;
@@ -70,8 +70,8 @@
 }
 
 .logoHelp {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   fill: var.$onyx;
   transition: ease 200ms;
 
@@ -83,12 +83,15 @@
 .itemText {
   color: var.$onyx;
   text-align: justify;
+  padding-inline: 1rem;
   font-size: var.$font-18;
+  font-family: var.$poppins-font;
 }
 
 .fowardButton,
 .backwardButton {
   cursor: pointer;
+  bottom: 13.5rem;
   position: absolute;
   border: transparent;
   background-color: transparent;
@@ -133,7 +136,7 @@
   transition: all ease 200ms;
   background-color: var.$white;
   border: 2px solid transparent;
-  filter: var.$subtle-drop-shadow;
+  filter: var.$very-subtle-drop-shadow;
 
   &:hover {
     border-color: var.$white;

@@ -6,13 +6,13 @@ export const enrollGuide = [
   },
   {
     title: 'ENEM',
-    extra: 'https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem',
+    help: 'https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem',
     content:
       'O ENEM é uma avaliação do desempenho escolar dos estudantes ao término da educação básica, sendo a principal forma de ingresso para o ensino superior no Brasil, além de também poder ser usada em algumas universidades no exterior. As principais formas de ingresso para as universidades com a nota do ENEM são: SISU, PROUNI e FIES. Essa prova é realizada em duas etapas, sendo composta por uma redação dissertativa-argumentativa, linguagens, ciências humanas, matemática e ciências da natureza.',
   },
   {
     title: 'PROUNI',
-    extra: 'https://acessounico.mec.gov.br/prouni',
+    help: 'https://acessounico.mec.gov.br/prouni',
     content:
       'O Prouni (Programa Universidade para Todos) pode garantir acesso a uma faculdade particular a partir de bolsas de estudos integrais (cobrem o custo completo) ou parciais (cobrem uma parcela do custo). Para conseguir ingressar no programa, é necessário realizar o ENEM e atingir uma nota igual ou superior à nota de corte (que varia a cada ano). Além disso, é necessário ter cursado o Ensino Médio completo em escola pública ou em escola privada como bolsista integral. Os algoritmos do PROUNI também dão preferência a conceder bolsa para pessoas portadoras de alguma deficiência e para funcionários públicos.',
   },
@@ -28,7 +28,7 @@ export const enrollGuide = [
   },
   {
     title: 'Concursos Públicos',
-    extra: 'https://www.gov.br/gestao/pt-br/concursonacional',
+    help: 'https://www.gov.br/gestao/pt-br/concursonacional',
     content:
       'O concurso público é uma prova realizada para exercer um cargo público em áreas como segurança (polícia militar), educação, saúde, administração pública e muitos outros. As provas são teóricas e podem incluir testes físicos ou psicológicos. As provas teóricas ainda podem ser divididas em conhecimentos gerais (abordando matérias como português e matemática) e provas com conhecimentos específicos para o cargo escolhido. As provas têm um número limitado de vagas a serem preenchidas e os candidatos que conseguirem alcançar as maiores notas serão chamados para exercer o cargo. Muitos cargos públicos não exigem curso superior (faculdade) ou especialização e você pode realizar a prova assim que concluir o Ensino Médio! Acesse aqui uma lista dos concursos e áreas que você pode ingressar assim que completar o ensino médio, sem necessidade de realizar o Ensino Superior O Concurso Público Nacional Unificado é o “ENEM” dos concursos públicos. Ele unifica todas as oportunidades de carreira em uma única prova.',
   },
