@@ -22,3 +22,26 @@
     color: var.$raisin-black;
   }
 }
+
+@media (width <= 1700px) {
+  .list {
+    gap: 0.5rem;
+  }
+}
+
+@media (width <= 900px) {
+  .list {
+    display: none;
+  }
+
+  .item {
+    padding: 0;
+    width: 100%;
+  }
+
+  .link {
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+  }
+}

@@ -36,7 +36,7 @@
   position: absolute;
   border-radius: 0.5rem;
   background-color: var.$white;
-  filter: var.$subtle-drop-shadow;
+  box-shadow: var.$subtle-box-shadow;
   animation: ease forwards fadeIn 300ms;
 }
 
@@ -81,4 +81,27 @@
   text-decoration: none;
   color: var.$cadet-gray;
   font-weight: var.$medium;
+}
+
+@media (width <= 900px) {
+  .navigationItem {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .menuWrapper {
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    box-shadow: none;
+    position: initial;
+    max-height: 20rem;
+    overflow-y: scroll;
+    margin-top: 0.25rem;
+  }
 }

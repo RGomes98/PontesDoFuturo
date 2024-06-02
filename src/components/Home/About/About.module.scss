@@ -20,9 +20,12 @@
 .heading {
   gap: 1rem;
   display: flex;
+  align-items: center;
+}
+
+.headingText {
   font-weight: 900;
   line-height: 1.1;
-  align-items: center;
   font-size: var.$font-48;
   text-transform: uppercase;
   color: var.$palatinate-blue;
@@ -90,7 +93,7 @@
   border-radius: 0.5rem;
   flex-direction: column;
   background-color: var.$white;
-  filter: var.$very-subtle-drop-shadow;
+  box-shadow: var.$subtle-box-shadow;
 }
 
 .item {
@@ -105,6 +108,7 @@
   align-items: center;
   text-decoration: none;
   transition: ease 200ms;
+  font-family: var.$poppins-font;
   padding: 0.6rem 0.6rem 0.6rem 0.5rem;
 
   &:hover {
@@ -123,10 +127,10 @@
 .linkText {
   text-wrap: nowrap;
   text-decoration: none;
-  font-weight: var.$bold;
   color: var.$cadet-gray;
   font-size: var.$font-14;
   text-transform: uppercase;
+  font-weight: var.$semi-bold;
 }
 
 .subHeading {
@@ -146,4 +150,100 @@
   max-width: 45rem;
   max-height: 45rem;
   filter: var.$subtle-drop-shadow;
+}
+
+@media (width <= 1340px) {
+  .container {
+    padding-block: 8rem 2rem;
+    padding-inline: 4.5rem;
+  }
+
+  .headingText {
+    font-size: var.$font-32;
+  }
+
+  .socialButton {
+    margin-top: 0.4rem;
+  }
+
+  .text {
+    font-size: var.$font-18;
+  }
+}
+
+@media (width <= 1000px) {
+  .container {
+    gap: 6rem;
+    padding-block: 8rem 6rem;
+    grid-template-columns: 1fr;
+  }
+
+  .headingWrapper {
+    width: 100%;
+  }
+
+  .medicineFigure {
+    max-height: 30rem;
+  }
+}
+
+@media (width <= 768px) {
+  .container {
+    gap: 4rem;
+    padding-inline: 2rem;
+    padding-block: 6rem 3rem;
+  }
+
+  .headingWrapper {
+    gap: 1rem;
+  }
+
+  .headingText {
+    gap: 0.8rem;
+    font-size: var.$font-24;
+  }
+
+  .socialButton {
+    margin-top: 0.15rem;
+  }
+
+  .buttonText {
+    font-size: var.$font-14;
+  }
+
+  .list {
+    left: -6rem;
+    bottom: -5.5rem;
+  }
+
+  .logoArrow {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .linkText {
+    font-size: var.$font-13;
+  }
+
+  .logoInstagram {
+    min-width: 1.2rem;
+    max-width: 1.2rem;
+    min-height: 1.2rem;
+    max-height: 1.2rem;
+  }
+
+  .text {
+    font-size: var.$font-16;
+  }
+
+  .medicineFigure {
+    order: -1;
+    max-height: 25rem;
+  }
+}
+
+@media (width <= 550px) {
+  .container {
+    gap: 0rem;
+  }
 }

@@ -1,10 +1,10 @@
+import { useOutsideClick } from '@/hooks/useOutsideClick';
+import { useState } from 'react';
+
 import MedicineFigure from '@/assets/images/svgs/medicineFigure.svg?react';
 import LogoArrowDown from '@/assets/logos/svgs/logo-arrow-down.svg?react';
 import LogoInstagram from '@/assets/logos/svgs/logo-instagram.svg?react';
 import styles from './About.module.scss';
-
-import { useOutsideClick } from '@/hooks/useOutsideClick';
-import { useState } from 'react';
 
 export const About = () => {
   const [isSocialLinksMenuActive, setIsSocialLinksMenuActive] = useState(false);
@@ -20,7 +20,7 @@ export const About = () => {
     <section id='sobre-nos' className={styles.container}>
       <div className={styles.headingWrapper}>
         <span className={styles.heading}>
-          Sobre Nós{' '}
+          <span className={styles.headingText}>Sobre Nós</span>{' '}
           <button className={styles.socialButton} ref={triggerRef} onClick={socialLinksMenuToggle}>
             <span className={styles.buttonText}>Siga-nos</span>
             <LogoArrowDown className={styles.logoArrow} data-active={isSocialLinksMenuActive} />

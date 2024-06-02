@@ -87,3 +87,118 @@
   position: absolute;
   transform: rotate(180deg) scaleX(-1);
 }
+
+@media (width <= 1520px) {
+  .container {
+    padding-block: 8rem 6rem;
+    padding-inline: 10rem 20rem;
+  }
+
+  .heading {
+    font-size: var.$font-38;
+  }
+}
+
+@media (width <= 1340px) {
+  .container {
+    padding-block: 8rem 4rem;
+    padding-inline: 10rem 12rem;
+    background-position:
+      left bottom,
+      right bottom;
+  }
+
+  .heading {
+    font-size: var.$font-32;
+  }
+
+  .figure {
+    max-width: 25rem;
+  }
+}
+
+@media (width <= 1200px) {
+  .container {
+    padding-inline: 6rem 12rem;
+  }
+
+  .mainWrapper {
+    gap: 0;
+    padding-top: 0;
+  }
+
+  .figure {
+    max-width: 22rem;
+  }
+}
+
+@media (width <= 1000px) {
+  .container {
+    gap: 2rem;
+    align-items: center;
+    padding-inline: 2rem;
+    flex-direction: column;
+    padding-block: 6rem 3.5rem;
+    background-position: bottom;
+  }
+
+  .mainWrapper {
+    order: -1;
+    max-width: 10rem;
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .figureWrapper {
+    width: 100%;
+    align-items: center;
+  }
+
+  .figure {
+    align-self: flex-start;
+  }
+}
+
+@media (width <= 768px) {
+  .container {
+    gap: 3rem;
+    padding-bottom: 3rem;
+    background-size: 150%, 150%;
+    background-position:
+      left bottom,
+      right 21rem;
+  }
+
+  .mainWrapper {
+    max-width: 10rem;
+  }
+
+  .logoText {
+    display: none;
+  }
+
+  .heading {
+    max-width: 20rem;
+    text-align: center;
+    font-size: var.$font-20;
+  }
+
+  .figureWrapper {
+    gap: 4rem;
+  }
+}
+
+@media (width <= 550px) {
+  .container {
+    padding-bottom: 3rem;
+    background-position:
+      left bottom,
+      right 24.5rem;
+  }
+
+  .figure {
+    padding-right: 4.2rem;
+  }
+}

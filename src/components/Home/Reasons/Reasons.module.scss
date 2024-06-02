@@ -60,3 +60,52 @@
   color: var.$cadet-gray;
   font-size: var.$font-18;
 }
+
+@media (width <= 1340px) {
+  .container {
+    padding-top: 2rem;
+    padding-inline: 4.5rem;
+  }
+
+  .heading {
+    font-size: var.$font-32;
+  }
+}
+
+@media (width <= 1000px) {
+  .container {
+    padding-block: 6rem 6rem;
+  }
+}
+
+@media (width <= 864px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 768px) {
+  .container {
+    gap: 6rem;
+    padding-inline: 2rem;
+    padding-block: 3rem 6rem;
+  }
+
+  .heading {
+    max-width: 20rem;
+    font-size: var.$font-24;
+  }
+
+  .list {
+    gap: 4rem;
+  }
+
+  .logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .itemHeading {
+    font-size: var.$font-18;
+  }
+}

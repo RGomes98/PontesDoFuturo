@@ -29,7 +29,21 @@
 
 .copyrightText {
   color: var.$onyx;
+  text-align: center;
   font-weight: var.$medium;
   filter: var.$subtle-drop-shadow;
   letter-spacing: var.$letter-spacing-minus-0-18;
+}
+
+@media (width <= 1340px) {
+  .footer {
+    padding-inline: 4.5rem;
+  }
+}
+
+@media (width <= 768px) {
+  .footer {
+    padding-block: 1rem 3rem;
+    padding-inline: 2rem;
+  }
 }

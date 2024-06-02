@@ -26,3 +26,10 @@ body {
   height: 14.063rem;
   position: absolute;
 }
+
+@media (width <= 1200px) {
+  .waves {
+    top: 8rem;
+    height: 4rem;
+  }
+}

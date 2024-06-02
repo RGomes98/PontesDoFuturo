@@ -9,30 +9,33 @@
   flex-direction: column;
   scroll-margin-top: 8rem;
   justify-content: center;
-  padding-block: 8rem 14rem;
+  padding-block: 6rem 16rem;
   background-color: var.$maya-blue;
 }
 
 .mainHeading {
   gap: 0.8rem;
   display: flex;
-  font-weight: 900;
   max-width: 35rem;
-  line-height: 1.1;
-  color: var.$onyx;
   align-items: center;
-  font-size: var.$font-38;
   justify-content: center;
+  filter: var.$subtle-drop-shadow;
+}
+
+.headingText {
+  font-weight: 900;
+  line-height: 1.1;
+  color: var.$white;
+  font-size: var.$font-38;
   text-transform: uppercase;
   font-family: var.$nunito-font;
-  filter: var.$subtle-drop-shadow;
 }
 
 .logoInfo {
   width: 2.4rem;
   height: 2.4rem;
   cursor: pointer;
-  fill: var.$onyx;
+  fill: var.$white;
 }
 
 .careerProfilerWrapper {
@@ -48,7 +51,7 @@
   justify-content: center;
   padding: 3rem 3rem 2.5rem;
   background-color: var.$white;
-  filter: var.$subtle-drop-shadow;
+  box-shadow: var.$subtle-box-shadow;
 }
 
 .loadingContainer {
@@ -221,7 +224,7 @@
 
     &::after {
       border-color: var.$white;
-      background-color: var.$transparent-black-20;
+      background-color: var.$coral;
     }
   }
 }
@@ -342,5 +345,47 @@
 
   &:hover {
     scale: 1.05;
+  }
+}
+
+@media (width <= 1340px) {
+  .container {
+    padding-inline: 4.5rem;
+  }
+  .headingText {
+    font-size: var.$font-32;
+  }
+}
+
+@media (width <= 1200px) {
+}
+
+@media (width <= 768px) {
+  .container {
+    padding-inline: 2rem;
+    padding-block: 6rem 14rem;
+  }
+
+  .headingText {
+    white-space: nowrap;
+    font-size: var.$font-24;
+  }
+
+  .startText {
+    margin-top: 1rem;
+    font-size: var.$font-16;
+  }
+
+  .careerProfilerWrapper {
+    padding: 2.5rem 2rem 2.25rem;
+  }
+
+  .loadingContainer {
+    gap: 0.5rem;
+  }
+
+  .waves {
+    height: 4rem;
+    bottom: -0.2rem;
   }
 }

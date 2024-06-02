@@ -63,7 +63,7 @@ export const CareerProfiler = () => {
   return (
     <section id='teste-vocacional' className={styles.container}>
       <span className={styles.mainHeading}>
-        Teste Vocacional{' '}
+        <span className={styles.headingText}>Teste Vocacional</span>{' '}
         <Tooltip content='Por favor, esteja ciente de que este teste vocacional não foi desenvolvido com base em uma metodologia profissionalmente reconhecida e pode não fornecer uma análise completa. Use-o como uma ferramenta inicial para explorar suas opções educacionais.'>
           <LogoInfo className={styles.logoInfo} />
         </Tooltip>

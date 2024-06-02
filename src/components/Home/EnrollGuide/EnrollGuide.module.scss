@@ -1,18 +1,18 @@
 @use '@/stylesheets/variables' as var;
 
 .container {
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
   display: flex;
   overflow: hidden;
   position: relative;
   text-align: center;
   align-items: center;
-  padding-inline: 15rem;
+  padding-inline: 10rem;
   background-size: 100%;
   flex-direction: column;
   background-position: top;
-  padding-block: 62rem 8rem;
+  padding-block: 64rem 6rem;
   background-repeat: no-repeat;
   background-color: var.$maya-blue;
   background-image: url('@/assets/images/svgs/WavesLightBlue.svg');
@@ -31,12 +31,16 @@
   font-weight: 900;
   max-width: 35rem;
   line-height: 1.1;
-  color: var.$onyx;
+  color: var.$white;
   align-items: center;
   font-size: var.$font-38;
   text-transform: uppercase;
   font-family: var.$nunito-font;
   filter: var.$subtle-drop-shadow;
+}
+
+.listWrapper {
+  width: 100%;
 }
 
 .list {
@@ -50,13 +54,13 @@
 }
 
 .item {
-  gap: 2rem;
+  gap: 3rem;
   height: 100%;
   display: flex;
   min-width: 100%;
+  padding-top: 2rem;
   text-align: center;
   align-items: center;
-  padding: 2rem 0 3rem;
   border-radius: 0.5rem;
   flex-direction: column;
   transition: translate 300ms ease-in-out;
@@ -67,7 +71,7 @@
   display: flex;
   max-width: 35rem;
   line-height: 1.1;
-  color: var.$onyx;
+  color: var.$white;
   align-items: center;
   font-weight: var.$bold;
   font-size: var.$font-38;
@@ -81,7 +85,7 @@
 .logoHelp {
   width: 2.5rem;
   height: 2.5rem;
-  fill: var.$onyx;
+  fill: var.$white;
   transition: ease 200ms;
 
   &:hover {
@@ -90,17 +94,16 @@
 }
 
 .itemText {
-  color: var.$onyx;
+  color: var.$white;
   text-align: justify;
-  padding-inline: 1rem;
   font-size: var.$font-18;
   font-family: var.$poppins-font;
 }
 
 .fowardButton,
 .backwardButton {
+  bottom: 8.8rem;
   cursor: pointer;
-  bottom: 12.5rem;
   position: absolute;
   border: transparent;
   background-color: transparent;
@@ -127,12 +130,10 @@
 }
 
 .guideSelector {
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   gap: 1rem;
   display: flex;
-  position: absolute;
+  margin-top: 3rem;
   margin-inline: auto;
   justify-content: center;
 }
@@ -154,6 +155,97 @@
 
   &[data-active='true'] {
     border-color: var.$white;
-    background-color: var.$cadet-gray;
+    background-color: var.$coral;
+  }
+}
+
+@media (width <= 1620px) {
+  .container {
+    padding-inline: 5.5rem;
+  }
+}
+
+@media (width <= 1340px) {
+  .container {
+    padding-inline: 4.5rem;
+  }
+
+  .mainHeading,
+  .itemHeading {
+    font-size: var.$font-32;
+  }
+
+  .logoHelp {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .logoArrow {
+    display: none;
+  }
+}
+
+@media (width <= 1000px) {
+  .floatingBalloon {
+    width: 90%;
+    right: unset;
+    margin-inline: auto;
+  }
+
+  .itemText {
+    font-size: var.$font-16;
+  }
+}
+
+@media (width <= 768px) {
+  .container {
+    gap: 0;
+    padding-inline: 2rem;
+    padding-block: 54rem 6rem;
+  }
+
+  .item {
+    margin-top: -3rem;
+    transition:
+      translate 300ms ease-in-out,
+      margin-top 500ms ease;
+
+    &[data-large-content='true'] {
+      margin-top: unset;
+    }
+  }
+
+  .guideSelector {
+    z-index: 10;
+    margin-top: -1.5rem;
+    transition: margin-top 500ms ease;
+
+    &[data-large-content='true'] {
+      margin-top: 3rem;
+    }
+  }
+
+  .mainHeading {
+    max-width: 25rem;
+    font-size: var.$font-24;
+  }
+
+  .itemHeading {
+    font-size: var.$font-24;
+  }
+
+  .logoHelp {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+}
+
+@media (width <= 550px) {
+  .container {
+    padding-block: 40rem 6rem;
+  }
+
+  .floatingBalloon {
+    top: -2rem;
   }
 }

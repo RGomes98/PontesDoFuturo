@@ -15,3 +15,33 @@
     filter: var.$very-subtle-drop-shadow;
   }
 }
+
+@media (width <= 1700px) {
+  .navbar {
+    padding: 2.5rem 6rem;
+  }
+}
+
+@media (width <= 1200px) {
+  .navbar {
+    padding: 2.5rem 4.5rem;
+    background-color: var.$white;
+  }
+}
+
+@media (width <= 900px) {
+  .navbar {
+    padding: 1rem 4rem;
+
+    &[data-mobile-active='true'] {
+      filter: none;
+    }
+  }
+}
+
+@media (width <= 550px) {
+  .navbar {
+    gap: 5rem;
+    padding: 1rem 2rem;
+  }
+}
