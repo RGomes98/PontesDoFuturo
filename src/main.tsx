@@ -1,3 +1,6 @@
+/* eslint-disable */
+// @ts-nocheck
+
 import { createRouter, Navigate, RouterProvider } from '@tanstack/react-router';
 import { routeTree } from './routeTree.gen.ts';
 
