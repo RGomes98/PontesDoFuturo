@@ -2,6 +2,7 @@ import { useEnrollGuideSlider } from '@/hooks/useEnrollGuideSlider';
 
 import LogoArrowBackward from '@/assets/logos/svgs/logo-arrow-backward.svg?react';
 import LogoArrowFoward from '@/assets/logos/svgs/logo-arrow-foward.svg?react';
+import FloatingBalloon from '@/assets/images/svgs/floatingBalloon.svg?react';
 import LogoHelp from '@/assets/logos/svgs/logo-help.svg?react';
 import styles from './EnrollGuide.module.scss';
 
@@ -16,6 +17,7 @@ export const EnrollGuide = () => {
 
   return (
     <section className={styles.container}>
+      <FloatingBalloon className={styles.floatingBalloon} />
       <span className={styles.mainHeading}>Conheça alguns Modelos Educacionais</span>
       <ul className={styles.list}>
         {enrollGuideContent.map(({ title, content, help }) => {
