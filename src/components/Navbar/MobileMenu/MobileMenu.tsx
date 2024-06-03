@@ -1,5 +1,5 @@
-import { useMobileMenuOverlayTransition } from '@/hooks/useMobileMenuOverlayTransition';
 import { NavigationLinks } from '../NavigationLinks/NavigationLinks';
+import { useElementTransition } from '@/hooks/useElementTransition';
 import { useStore } from '@/lib/store';
 
 import styles from './MobileMenu.module.scss';
@@ -41,8 +41,11 @@ export const MobileMenu = () => {
 };
 
 export const Overlay = () => {
-  const { overlayRef } = useMobileMenuOverlayTransition<HTMLDivElement>({ transitionDelay: 200 });
-  const { setIsMobileMenuActive } = useStore();
+  const { isMobileMenuActive, setIsMobileMenuActive } = useStore();
+  const { elementRef } = useElementTransition<HTMLDivElement>({
+    isTransitioningToVisible: isMobileMenuActive,
+    transitionDelay: 200,
+  });
 
-  return <div className={styles.overlay} ref={overlayRef} onClick={() => setIsMobileMenuActive(false)}></div>;
+  return <div className={styles.overlay} ref={elementRef} onClick={() => setIsMobileMenuActive(false)}></div>;
 };
