@@ -25,13 +25,23 @@
   font-weight: var.$medium;
   transition: all ease 300ms;
   background-color: var.$white;
+  animation: ease fadeIn 200ms;
   font-family: var.$poppins-font;
   line-height: var.$line-height-20;
-  filter: var.$very-subtle-drop-shadow;
+  box-shadow: var.$subtle-box-shadow;
 
   &[data-visible='true'] {
     opacity: 1;
     transform: translateY(-10%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -65,8 +75,8 @@
   }
 
   .tooltipContent {
-    max-width: 22rem;
-    font-size: var.$font-13;
+    max-width: 15rem;
+    font-size: var.$font-12;
   }
 
   .tooltipContent::after {

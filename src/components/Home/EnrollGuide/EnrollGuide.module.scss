@@ -201,7 +201,7 @@
   .container {
     gap: 0;
     padding-inline: 2rem;
-    padding-block: 54rem 6rem;
+    padding-block: 54rem 3rem;
   }
 
   .item {
@@ -216,7 +216,6 @@
   }
 
   .guideSelector {
-    z-index: 10;
     margin-top: -1.5rem;
     transition: margin-top 500ms ease;
 
@@ -242,10 +241,11 @@
 
 @media (width <= 550px) {
   .container {
-    padding-block: 40rem 6rem;
+    padding-block: 40rem 3rem;
   }
 
   .floatingBalloon {
     top: -2rem;
+    right: -1rem;
   }
 }

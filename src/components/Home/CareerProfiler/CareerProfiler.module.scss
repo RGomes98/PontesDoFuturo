@@ -134,7 +134,7 @@
 .currentStatement {
   color: var.$onyx;
   font-size: var.$font-18;
-  font-family: var.$medium;
+  font-weight: var.$medium;
   font-family: var.$poppins-font;
 }
 
@@ -363,7 +363,7 @@
 @media (width <= 768px) {
   .container {
     padding-inline: 2rem;
-    padding-block: 6rem 14rem;
+    padding-block: 3rem 14rem;
   }
 
   .headingText {
@@ -376,8 +376,16 @@
     font-size: var.$font-16;
   }
 
+  .careerProfiler {
+    gap: 2.5rem;
+  }
+
+  .controlButtonsWrapper {
+    margin-top: 3rem;
+  }
+
   .careerProfilerWrapper {
-    padding: 2.5rem 2rem 2.25rem;
+    padding: 3rem 2rem 2.25rem;
   }
 
   .loadingContainer {
