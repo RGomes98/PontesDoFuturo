@@ -27,15 +27,9 @@ export const EnrollGuide = () => {
   }
 
   const move = (distance: number) => {
-    if (distance > 100) {
-      handleUpdateGuideIndex(+1);
-      resetPositions();
-    }
-
-    if (distance < -100) {
-      handleUpdateGuideIndex(-1)
-      resetPositions();
-    }
+    if (distance > 100) handleUpdateGuideIndex(+1);
+    if (distance < -100) handleUpdateGuideIndex(-1)
+    resetPositions();
   }
 
   const calculateTouchDistanceMoved = (endX: number) => {
