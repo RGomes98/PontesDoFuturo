@@ -5,6 +5,7 @@ import LogoArrowFoward from '@/assets/logos/svgs/logo-arrow-foward.svg?react';
 import FloatingBalloon from '@/assets/images/svgs/floatingBalloon.svg?react';
 import LogoHelp from '@/assets/logos/svgs/logo-help.svg?react';
 import styles from './EnrollGuide.module.scss';
+import { useState, TouchEvent } from 'react';
 
 export const EnrollGuide = () => {
   const {
@@ -14,6 +15,37 @@ export const EnrollGuide = () => {
     setCurrentGuideIndex,
     handleUpdateGuideIndex,
   } = useEnrollGuideSlider();
+
+  const [startPosition, setStartPosition] = useState({ x: 0});
+
+  const resetPositions = () => {
+    setStartPosition({x: 0});
+  }
+
+  const handleStartTouchPosition = (e: TouchEvent) => {
+    setStartPosition({x: e.touches[0].clientX});
+  }
+
+  const move = (distance: number) => {
+    if (distance > 100) {
+      handleUpdateGuideIndex(+1);
+      resetPositions();
+    }
+
+    if (distance < -100) {
+      handleUpdateGuideIndex(-1)
+      resetPositions();
+    }
+  }
+
+  const calculateTouchDistanceMoved = (endX: number) => {
+    const distance = startPosition.x - endX;
+    move(distance);
+  };
+
+  const handleEndTouchPosition = (e: TouchEvent) => {
+    calculateTouchDistanceMoved(e.changedTouches[0].clientX);
+  }
 
   const isContentTooLarge = enrollGuideContent[currentGuideIndex].content.length > 800;
 
@@ -33,8 +65,11 @@ export const EnrollGuide = () => {
             return (
               <li
                 key={title}
+                // ref={liRef}
                 className={styles.item}
                 data-large-content={isContentTooLarge}
+                onTouchStart={handleStartTouchPosition}    
+                onTouchEnd={handleEndTouchPosition}
                 style={{ translate: `${-100 * currentGuideIndex}%` }}
               >
                 <span className={styles.itemHeading}>
