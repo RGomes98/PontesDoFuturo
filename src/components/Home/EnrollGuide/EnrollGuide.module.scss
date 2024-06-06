@@ -1,7 +1,7 @@
 @use '@/stylesheets/variables' as var;
 
 .container {
-  gap: 2rem;
+  gap: 4rem;
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -40,29 +40,42 @@
 }
 
 .listWrapper {
+  gap: 4rem;
   width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .list {
+  gap: 2.5rem;
   width: 100%;
   display: flex;
-  overflow: hidden;
   list-style: none;
+  overflow-x: scroll;
   position: relative;
   align-items: center;
-  justify-items: center;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 }
 
 .item {
-  gap: 3rem;
+  gap: 1rem;
   height: 100%;
   display: flex;
   min-width: 100%;
-  padding-top: 2rem;
   text-align: center;
   align-items: center;
   border-radius: 0.5rem;
   flex-direction: column;
+  scroll-snap-align: start;
   transition: translate 300ms ease-in-out;
 }
 
@@ -102,7 +115,6 @@
 
 .fowardButton,
 .backwardButton {
-  bottom: 8.8rem;
   cursor: pointer;
   position: absolute;
   border: transparent;
@@ -130,10 +142,9 @@
 }
 
 .guideSelector {
-  position: relative;
   gap: 1rem;
   display: flex;
-  margin-top: 3rem;
+  position: relative;
   margin-inline: auto;
   justify-content: center;
 }
@@ -186,6 +197,14 @@
 }
 
 @media (width <= 1000px) {
+  .container {
+    gap: 2rem;
+  }
+
+  .listWrapper {
+    gap: 2rem;
+  }
+
   .floatingBalloon {
     width: 90%;
     right: unset;
@@ -199,28 +218,29 @@
 
 @media (width <= 768px) {
   .container {
-    gap: 0;
     padding-inline: 2rem;
     padding-block: 54rem 3rem;
   }
 
   .item {
-    margin-top: -3rem;
     transition:
       translate 300ms ease-in-out,
       margin-top 500ms ease;
-
-    &[data-large-content='true'] {
-      margin-top: unset;
-    }
   }
 
   .guideSelector {
-    margin-top: -1.5rem;
     transition: margin-top 500ms ease;
+  }
 
-    &[data-large-content='true'] {
-      margin-top: 3rem;
+  .selectButton {
+    &:hover {
+      border-color: var.$white;
+      background-color: var.$white;
+    }
+
+    &[data-active='true'] {
+      border-color: var.$white;
+      background-color: var.$coral;
     }
   }
 
@@ -230,12 +250,13 @@
   }
 
   .itemHeading {
+    gap: 0.5rem;
     font-size: var.$font-24;
   }
 
   .logoHelp {
-    width: 1.9rem;
-    height: 1.9rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 }
 
