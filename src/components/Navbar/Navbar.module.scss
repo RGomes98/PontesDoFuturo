@@ -16,6 +16,12 @@
   }
 }
 
+.logo {
+  height: auto;
+  width: 14rem;
+  filter: var.$subtle-drop-shadow;
+}
+
 @media (width <= 1700px) {
   .navbar {
     padding: 2.5rem 6rem;
@@ -42,6 +48,6 @@
 @media (width <= 550px) {
   .navbar {
     gap: 5rem;
-    padding: 0.5rem 2rem;
+    padding: 1rem 2.5rem;
   }
 }

@@ -1,10 +1,11 @@
 import { HamburgerButton, MobileMenu, Overlay } from './MobileMenu/MobileMenu';
 import { useScrollLocationTrigger } from '@/hooks/useScrollLocationTrigger ';
 import { NavigationLinks } from './NavigationLinks/NavigationLinks';
-import { LogoHorizontal } from './LogoHorizontal/LogoHorizontal';
+import { Link } from '@tanstack/react-router';
 import { Fragment } from 'react/jsx-runtime';
 import { useStore } from '@/lib/store';
 
+import LogoHorizontal from '@/assets/logos/pngs/logo-horizontal-remastered.png';
 import styles from './Navbar.module.scss';
 
 export const Navbar = () => {
@@ -18,7 +19,9 @@ export const Navbar = () => {
         data-visible={isTriggerActivated}
         data-mobile-active={isMobileMenuActive}
       >
-        <LogoHorizontal />
+        <Link to='/' resetScroll>
+          <img className={styles.logo} src={LogoHorizontal} alt='logo-horizontal' />
+        </Link>
         <NavigationLinks />
         <HamburgerButton />
       </nav>
