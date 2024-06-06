@@ -67,7 +67,7 @@
 }
 
 .item {
-  gap: 1rem;
+  gap: 2rem;
   height: 100%;
   display: flex;
   min-width: 100%;
@@ -157,7 +157,7 @@
   transition: all ease 200ms;
   background-color: var.$white;
   border: 2px solid transparent;
-  filter: var.$very-subtle-drop-shadow;
+  box-shadow: var.$very-subtle-box-shadow;
 
   &:hover {
     border-color: var.$white;

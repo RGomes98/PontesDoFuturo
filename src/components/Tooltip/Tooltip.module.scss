@@ -28,7 +28,7 @@
   animation: ease fadeIn 200ms;
   font-family: var.$poppins-font;
   line-height: var.$line-height-20;
-  box-shadow: var.$subtle-box-shadow;
+  box-shadow: var.$very-subtle-box-shadow;
 
   &[data-visible='true'] {
     opacity: 1;

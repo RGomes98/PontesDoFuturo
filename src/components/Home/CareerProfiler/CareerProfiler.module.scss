@@ -267,7 +267,7 @@
   text-transform: uppercase;
   transition: all ease 300ms;
   background-color: var.$coral;
-  filter: var.$subtle-drop-shadow;
+  box-shadow: var.$very-subtle-box-shadow;
 
   &:hover {
     scale: 1.05;
@@ -393,7 +393,7 @@
   }
 
   .waves {
-    height: 4rem;
+    height: 2rem;
     bottom: -0.2rem;
   }
 }

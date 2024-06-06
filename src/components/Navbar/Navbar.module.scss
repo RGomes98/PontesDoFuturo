@@ -12,7 +12,7 @@
 
   &[data-visible='true'] {
     background-color: var.$white;
-    filter: var.$very-subtle-drop-shadow;
+    box-shadow: var.$extra-subtle-box-shadow;
   }
 }
 
@@ -34,7 +34,7 @@
     padding: 1rem 4rem;
 
     &[data-mobile-active='true'] {
-      filter: none;
+      box-shadow: none;
     }
   }
 }
@@ -42,6 +42,6 @@
 @media (width <= 550px) {
   .navbar {
     gap: 5rem;
-    padding: 1rem 2rem;
+    padding: 0rem 2rem;
   }
 }
