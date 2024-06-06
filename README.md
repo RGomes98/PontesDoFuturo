@@ -20,6 +20,4 @@ O objetivo principal é criar uma plataforma interativa e informativa para os al
 
 ## Screenshots
 
-### Home
-
 ![HomePage](./screenshots/home-page.png)
