@@ -44,7 +44,7 @@ export const useCareerProfiler = () => {
     const career = calculateWinningCareer(currentAnswers);
     setIsCareerProfilerResultLoading(true);
     await createLoadingDelay(5000);
-    navigate({ to: `/curso/${generateCareerURLSlug(career)}` });
+    navigate({ resetScroll: true, to: `/curso/${generateCareerURLSlug(career)}` });
   };
 
   return {

@@ -18,6 +18,6 @@ O objetivo principal é criar uma plataforma interativa e informativa para os al
 
 ![VisualIdentity](./screenshots/visual-identity.png)
 
-## Screenshots
+## Screenshot
 
 ![HomePage](./screenshots/home-page.png)
