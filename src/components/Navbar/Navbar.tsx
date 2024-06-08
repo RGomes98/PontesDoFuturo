@@ -9,8 +9,8 @@ import LogoHorizontal from '@/assets/logos/pngs/logo-horizontal-remastered.png';
 import styles from './Navbar.module.scss';
 
 export const Navbar = () => {
+  const { isMobileMenuActive, setIsMobileMenuActive } = useStore();
   const { isTriggerActivated } = useScrollLocationTrigger(50);
-  const { isMobileMenuActive } = useStore();
 
   return (
     <Fragment>
@@ -19,7 +19,7 @@ export const Navbar = () => {
         data-visible={isTriggerActivated}
         data-mobile-active={isMobileMenuActive}
       >
-        <Link to='/' resetScroll>
+        <Link to='/' resetScroll onClick={() => setIsMobileMenuActive(false)}>
           <img className={styles.logo} src={LogoHorizontal} alt='logo-horizontal' />
         </Link>
         <NavigationLinks />
