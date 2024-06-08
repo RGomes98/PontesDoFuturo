@@ -75,6 +75,7 @@
   align-items: center;
   border-radius: 0.5rem;
   flex-direction: column;
+  scroll-snap-stop: always;
   scroll-snap-align: start;
   transition: translate 300ms ease-in-out;
 }
