@@ -2,6 +2,7 @@
 // @ts-nocheck
 
 import { createRouter, Navigate, RouterProvider } from '@tanstack/react-router';
+import { Analytics } from '@vercel/analytics/react';
 import { routeTree } from './routeTree.gen.ts';
 
 import ReactDOM from 'react-dom/client';
@@ -23,5 +24,6 @@ const router = createRouter({
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Analytics />
   </React.StrictMode>
 );
