@@ -5,12 +5,14 @@
   display: flex;
   position: relative;
   align-items: center;
+  padding-block: 12rem;
   padding-inline: 10rem;
+  background-size: cover;
   flex-direction: column;
-  scroll-margin-top: 8rem;
   justify-content: center;
-  padding-block: 6rem 16rem;
+  scroll-margin-top: 2rem;
   background-color: var.$maya-blue;
+  background-image: url('@/assets/images/svgs/orangePeaks.svg');
 }
 
 .mainHeading {
@@ -109,17 +111,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.waves {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 5rem;
-  fill: var.$white;
-  position: absolute;
-  transform: rotate(180deg) scaleX(-1);
-  filter: var.$very-subtle-drop-shadow;
 }
 
 .progressWrapper {
@@ -363,13 +354,10 @@
   }
 }
 
-@media (width <= 1200px) {
-}
-
 @media (width <= 768px) {
   .container {
     padding-inline: 2rem;
-    padding-block: 3rem 14rem;
+    padding-block: 3rem 10rem;
   }
 
   .headingText {
@@ -396,10 +384,5 @@
 
   .loadingContainer {
     gap: 0.5rem;
-  }
-
-  .waves {
-    height: 2rem;
-    bottom: -0.2rem;
   }
 }

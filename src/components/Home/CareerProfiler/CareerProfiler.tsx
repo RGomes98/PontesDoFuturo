@@ -12,7 +12,6 @@ import logoVertical from '@/assets/logos/pngs/logo-vertical.png';
 import LogoInfo from '@/assets/logos/svgs/logo-info.svg?react';
 import logoSymbol from '@/assets/logos/pngs/logo-symbol.png';
 import LogoBad from '@/assets/logos/svgs/logo-bad.svg?react';
-import Waves from '@/assets/images/svgs/waves.svg?react';
 import styles from './CareerProfiler.module.scss';
 
 type CareerProfilerHeading = {
@@ -102,7 +101,6 @@ export const CareerProfiler = () => {
           <CareerProfilerInitialState startCareerProfiler={startCareerProfiler} />
         )}
       </div>
-      <Waves className={styles.waves} />
     </section>
   );
 };
