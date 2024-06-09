@@ -433,6 +433,11 @@ export const careers: Record<CareerURLSlug, CareerData> = {
       'Os profissionais de Educação Física têm como objetivo promover a saúde, o condicionamento físico e o bem-estar por meio da prática de atividades físicas e esportivas. Eles desenvolvem programas de exercícios personalizados, orientam sobre hábitos saudáveis e ensinam técnicas esportivas, adaptando-se às necessidades e capacidades individuais de cada pessoa para estimular',
     paths: [
       {
+        pathName: 'Educação Física Adaptada',
+        pathSummary:
+          'Educação Física Adaptada é uma área da educação física que se dedica ao desenvolvimento de programas de atividades físicas adaptadas para pessoas com deficiência ou necessidades especiais. Os profissionais de educação física adaptada promovem a inclusão social, autonomia e qualidade de vida por meio da prática regular de exercícios físicos adaptados às capacidades e limitações de cada indivíduo.',
+      },
+      {
         pathName: 'Personal Trainer',
         pathSummary:
           'Personal Trainer é uma área da educação física que se dedica ao treinamento personalizado de indivíduos, visando melhorar a saúde, condicionamento físico e qualidade de vida. Os profissionais de personal trainer desenvolvem programas de exercícios específicos para cada cliente, levando em consideração suas necessidades, objetivos e condições físicas, e acompanham o progresso ao longo do tempo.',
@@ -446,11 +451,6 @@ export const careers: Record<CareerURLSlug, CareerData> = {
         pathName: 'Fisioterapia Esportiva',
         pathSummary:
           'Fisioterapia Esportiva é uma área da educação física que se dedica ao diagnóstico, tratamento e reabilitação de lesões e disfunções musculoesqueléticas em atletas e praticantes de atividades físicas. Os fisioterapeutas esportivos utilizam técnicas de terapia manual, exercícios terapêuticos, modalidades físicas e reabilitação funcional para acelerar a recuperação, restaurar a função e prevenir novas lesões.',
-      },
-      {
-        pathName: 'Educação Física Adaptada',
-        pathSummary:
-          'Educação Física Adaptada é uma área da educação física que se dedica ao desenvolvimento de programas de atividades físicas adaptadas para pessoas com deficiência ou necessidades especiais. Os profissionais de educação física adaptada promovem a inclusão social, autonomia e qualidade de vida por meio da prática regular de exercícios físicos adaptados às capacidades e limitações de cada indivíduo.',
       },
       {
         pathName: 'Recreação e Lazer',

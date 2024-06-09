@@ -88,11 +88,19 @@
 .fowardButton,
 .backwardButton {
   z-index: 10;
-  bottom: 9.35rem;
+  bottom: 7.35rem;
   cursor: pointer;
   position: absolute;
   border: transparent;
   background-color: transparent;
+
+  &[data-big-summary='true'] {
+    bottom: 8.35rem;
+  }
+
+  &[data-small-summary='true'] {
+    bottom: 6.35rem;
+  }
 }
 
 .fowardButton {
@@ -251,7 +259,7 @@
 @media (width <= 768px) {
   .container {
     padding-inline: 2rem;
-    padding-block: 22rem 12rem;
+    padding-block: 22rem 10rem;
   }
 
   .item {

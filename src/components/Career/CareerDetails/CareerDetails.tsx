@@ -7,13 +7,22 @@ import styles from './CareerDetails.module.scss';
 
 export const CareerDetails = ({ career }: { career: CareersDetails[string] }) => {
   const { careerImage } = useCareerImageComponent(career.name, styles.careerImage);
+  const isCareerNameExtraBig = career.name.length >= 19;
   const isCareerNameTooBig = career.name.length >= 12;
 
   return (
     <section className={styles.container}>
       <div className={styles.headingWrapper}>
-        <div className={styles.mainHeading} data-big-heading={isCareerNameTooBig}>
-          <div className={styles.heading} data-big-heading={isCareerNameTooBig}>
+        <div
+          className={styles.mainHeading}
+          data-big-heading={isCareerNameTooBig}
+          data-extra-big-heading={isCareerNameExtraBig}
+        >
+          <div
+            className={styles.heading}
+            data-big-heading={isCareerNameTooBig}
+            data-extra-big-heading={isCareerNameExtraBig}
+          >
             <span className={styles.headingText}>{career.name}</span>
             <a
               target='_blank'
