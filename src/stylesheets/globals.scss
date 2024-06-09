@@ -33,3 +33,10 @@ body {
     height: 4rem;
   }
 }
+
+@media (width <= 768px) {
+  .waves {
+    top: 7.5rem;
+    height: 3rem;
+  }
+}

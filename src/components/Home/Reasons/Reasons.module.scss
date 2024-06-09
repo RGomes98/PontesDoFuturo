@@ -61,6 +61,12 @@
   font-size: var.$font-18;
 }
 
+@media (width <= 1600px) {
+  .container {
+    padding-inline: 6rem;
+  }
+}
+
 @media (width <= 1340px) {
   .container {
     padding-top: 2rem;

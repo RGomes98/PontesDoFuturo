@@ -348,6 +348,12 @@
   }
 }
 
+@media (width <= 1600px) {
+  .container {
+    padding-inline: 6rem;
+  }
+}
+
 @media (width <= 1340px) {
   .container {
     padding-inline: 4.5rem;

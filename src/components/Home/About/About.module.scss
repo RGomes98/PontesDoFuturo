@@ -162,6 +162,12 @@
   filter: var.$subtle-drop-shadow;
 }
 
+@media (width <= 1600px) {
+  .container {
+    padding-inline: 6rem;
+  }
+}
+
 @media (width <= 1340px) {
   .container {
     padding-block: 8rem 2rem;
