@@ -12,7 +12,7 @@ O objetivo principal é criar uma plataforma interativa e informativa para os al
 
 ## Links
 
-- **Link do site**: [Pontes do Futuro](https://pontes-do-futuro.vercel.app/)
+- **Link do site**: [Pontes do Futuro](https://www.pontesdofuturo.com.br/)
 
 ## Identidade Visual
 
