@@ -87,6 +87,7 @@
 
 .fowardButton,
 .backwardButton {
+  z-index: 10;
   bottom: 9.35rem;
   cursor: pointer;
   position: absolute;
