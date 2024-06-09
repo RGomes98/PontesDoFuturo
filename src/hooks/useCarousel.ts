@@ -6,10 +6,10 @@ const options: IntersectionObserverInit = {
   rootMargin: '0px',
 };
 
-export const useCarousel = <C extends HTMLUListElement>() => {
+export const useCarousel = () => {
   const [isControlOnCooldown, setIsControlOnCooldown] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const carouselRef = useRef<C>(null);
+  const carouselRef = useRef<HTMLUListElement>(null);
 
   function getCarouselSlides() {
     const carousel = carouselRef.current;
