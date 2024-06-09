@@ -8,20 +8,19 @@ import Waves from '@/assets/images/svgs/waves.svg?react';
 import styles from './CareerPaths.module.scss';
 
 export const CareerPaths = ({ paths }: { paths: Path[] }) => {
+  const isPathSummaryTooSmall = Math.max(...paths.map(({ pathSummary }) => pathSummary.length)) <= 300;
+  const isPathSummaryTooBig = Math.max(...paths.map(({ pathSummary }) => pathSummary.length)) >= 435;
   const isMobileDevice = window.innerWidth <= 550;
+
+  const { carouselRef, currentSlideIndex, scrollToSlide, carouselControls } = useCarousel();
 
   const { containerRef } = useStarryNightSection({
     starClassName: styles.star,
-    shootingStarMaximumInterval: 8000,
+    shootingStarMaximumInterval: 5000,
     starsAmount: isMobileDevice ? 25 : 50,
     starTwinkleClassName: styles.starTwinkle,
     shootingStarClassName: styles.shootingStar,
   });
-
-  const { carouselRef, currentSlideIndex, scrollToSlide, carouselControls } = useCarousel();
-
-  const isPathSummaryTooBig = Math.max(...paths.map(({ pathSummary }) => pathSummary.length)) >= 435;
-  const isPathSummaryTooSmall = Math.max(...paths.map(({ pathSummary }) => pathSummary.length)) <= 300;
 
   return (
     <section className={styles.container} ref={containerRef}>

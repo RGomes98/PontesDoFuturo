@@ -7,33 +7,23 @@ import styles from './CareerDetails.module.scss';
 
 export const CareerDetails = ({ career }: { career: CareersDetails[string] }) => {
   const { careerImage } = useCareerImageComponent(career.name, styles.careerImage);
-  const isCareerNameExtraBig = career.name.length >= 19;
-  const isCareerNameTooBig = career.name.length >= 12;
 
   return (
     <section className={styles.container}>
       <div className={styles.headingWrapper}>
-        <div
-          className={styles.mainHeading}
-          data-big-heading={isCareerNameTooBig}
-          data-extra-big-heading={isCareerNameExtraBig}
-        >
-          <div
-            className={styles.heading}
-            data-big-heading={isCareerNameTooBig}
-            data-extra-big-heading={isCareerNameExtraBig}
-          >
+        <div className={styles.mainHeading}>
+          <div className={styles.heading}>
             <span className={styles.headingText}>{career.name}</span>
-            <a
-              target='_blank'
-              className={styles.link}
-              rel='noopener noreferrer'
-              href={`https://www.unifoa.edu.br/graduacao/${generateCareerURLSlug(career.name)}`}
-            >
-              Saiba mais <LogoLink className={styles.logo} />
-            </a>
+            <span className={styles.summary}>{career.summary}</span>
           </div>
-          <span className={styles.summary}>{career.summary}</span>
+          <a
+            target='_blank'
+            className={styles.link}
+            rel='noopener noreferrer'
+            href={`https://www.unifoa.edu.br/graduacao/${generateCareerURLSlug(career.name)}`}
+          >
+            Saiba mais <LogoLink className={styles.logo} />
+          </a>
         </div>
         <p className={styles.text}>{career.description}</p>
       </div>
