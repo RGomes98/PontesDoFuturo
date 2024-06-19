@@ -1,3 +1,4 @@
+import { useLocation } from '@tanstack/react-router';
 import { useEffect, useRef, useState } from 'react';
 
 const options: IntersectionObserverInit = {
@@ -8,13 +9,11 @@ const options: IntersectionObserverInit = {
 
 export const useCarousel = () => {
   const [isControlOnCooldown, setIsControlOnCooldown] = useState(false);
+  const [carouselSlides, setCarouselSlides] = useState<Element[]>([]);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const carouselRef = useRef<HTMLUListElement>(null);
 
-  function getCarouselSlides() {
-    const carousel = carouselRef.current;
-    return carousel ? Array.from<Element>(carousel.getElementsByTagName('li')) : [];
-  }
+  const carouselRef = useRef<HTMLUListElement>(null);
+  const { pathname } = useLocation();
 
   function carouselControls(direction: 'previous' | 'next') {
     const CAROUSEL_CONTROL_COOLDOWN = 500;
@@ -22,13 +21,11 @@ export const useCarousel = () => {
     setIsControlOnCooldown(true);
 
     setCurrentSlideIndex((currentSlide) => {
-      const slides = getCarouselSlides();
+      const previous = carouselSlides[currentSlide].previousElementSibling;
+      const next = carouselSlides[currentSlide].nextElementSibling;
 
-      const previous = slides[currentSlide].previousElementSibling;
-      const next = slides[currentSlide].nextElementSibling;
-
-      const previousSlide = previous ? slides.indexOf(previous) : currentSlide;
-      const nextSlide = next ? slides.indexOf(next) : currentSlide;
+      const previousSlide = previous ? carouselSlides.indexOf(previous) : currentSlide;
+      const nextSlide = next ? carouselSlides.indexOf(next) : currentSlide;
       const index = direction === 'previous' ? previousSlide : nextSlide;
 
       scrollToSlide(index);
@@ -39,22 +36,32 @@ export const useCarousel = () => {
   }
 
   function scrollToSlide(index: number) {
-    getCarouselSlides()[index].scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    carouselSlides[index].scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
   }
 
   useEffect(() => {
-    const callback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((slide) => {
-        slide.isIntersecting && setCurrentSlideIndex(getCarouselSlides().indexOf(slide.target));
-      });
-    };
+    (function resetCarouselSlides() {
+      const carousel = carouselRef.current;
+      if (!carousel) return [];
 
+      setCurrentSlideIndex(0);
+      carousel.scrollTo({ left: 0 });
+      setCarouselSlides(() => Array.from(carousel.getElementsByTagName('li')));
+    })();
+  }, [pathname]);
+
+  useEffect(() => {
     const intersectionObserver = new IntersectionObserver(callback, options);
-    const carouselSlides = getCarouselSlides();
+
+    function callback(entries: IntersectionObserverEntry[]) {
+      entries.forEach((slide) => {
+        slide.isIntersecting && setCurrentSlideIndex(carouselSlides.indexOf(slide.target));
+      });
+    }
 
     carouselSlides.forEach((slide) => intersectionObserver.observe(slide));
     return () => carouselSlides.forEach((slide) => intersectionObserver.unobserve(slide));
-  }, []);
+  }, [carouselSlides]);
 
   return { carouselRef, currentSlideIndex, scrollToSlide, carouselControls };
 };
