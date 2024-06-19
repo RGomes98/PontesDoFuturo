@@ -42,7 +42,7 @@ export const useCarousel = () => {
   useEffect(() => {
     (function resetCarouselSlides() {
       const carousel = carouselRef.current;
-      if (!carousel) return [];
+      if (!carousel) return;
 
       setCurrentSlideIndex(0);
       carousel.scrollTo({ left: 0 });
