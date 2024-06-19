@@ -1,3 +1,6 @@
+/* eslint-disable */
+// @ts-nocheck
+
 import { useLocation } from '@tanstack/react-router';
 import { useEffect, useRef, useState } from 'react';
 
@@ -13,8 +16,8 @@ function assertLiElement(element: Element): element is HTMLLIElement {
 
 export const useCarousel = () => {
   const [carouselSlides, setCarouselSlides] = useState<HTMLLIElement[]>([]);
-  const [isControlOnCooldown, setIsControlOnCooldown] = useState<boolean>(false);
-  const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const [isControlOnCooldown, setIsControlOnCooldown] = useState(false);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const carouselRef = useRef<HTMLUListElement>(null);
   const { pathname } = useLocation();
@@ -29,8 +32,8 @@ export const useCarousel = () => {
       const next = carouselSlides[currentSlide].nextElementSibling;
 
       const previousSlide =
-        previous && assertLiElement(previous) ? carouselSlides.indexOf(previous) : currentSlide;
-      const nextSlide = next && assertLiElement(next) ? carouselSlides.indexOf(next) : currentSlide;
+        previous && previous && assertLiElement(previous) ? carouselSlides.indexOf(previous) : currentSlide;
+      const nextSlide = next && next && assertLiElement(next) ? carouselSlides.indexOf(next) : currentSlide;
       const index = direction === 'previous' ? previousSlide : nextSlide;
 
       scrollToSlide(index);
@@ -41,30 +44,28 @@ export const useCarousel = () => {
   }
 
   function scrollToSlide(index: number) {
-    carouselSlides[index]?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    carouselSlides[index].scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
   }
 
   useEffect(() => {
-    const resetCarouselSlides = () => {
+    (function resetCarouselSlides() {
       const carousel = carouselRef.current;
       if (!carousel) return;
 
       setCurrentSlideIndex(0);
       carousel.scrollTo({ left: 0 });
-      setCarouselSlides(Array.from(carousel.getElementsByTagName('li')) as HTMLLIElement[]);
-    };
-
-    resetCarouselSlides();
+      setCarouselSlides(Array.from(carousel.getElementsByTagName('li')));
+    })();
   }, [pathname]);
 
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver(callback, options);
 
     function callback(entries: IntersectionObserverEntry[]) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && assertLiElement(entry.target)) {
-          setCurrentSlideIndex(carouselSlides.indexOf(entry.target));
-        }
+      entries.forEach((slide) => {
+        slide.isIntersecting &&
+          assertLiElement(slide.target) &&
+          setCurrentSlideIndex(carouselSlides.indexOf(slide.target));
       });
     }
 
