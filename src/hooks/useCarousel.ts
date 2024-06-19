@@ -46,7 +46,7 @@ export const useCarousel = () => {
 
       setCurrentSlideIndex(0);
       carousel.scrollTo({ left: 0 });
-      setCarouselSlides(() => Array.from(carousel.getElementsByTagName('li')));
+      setCarouselSlides(Array.from(carousel.getElementsByTagName('li')));
     })();
   }, [pathname]);
 
