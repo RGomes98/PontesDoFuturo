@@ -10,13 +10,9 @@ const options: IntersectionObserverInit = {
   rootMargin: '0px',
 };
 
-function assertLiElement(element: Element): element is HTMLLIElement {
-  return element instanceof HTMLLIElement;
-}
-
 export const useCarousel = () => {
-  const [carouselSlides, setCarouselSlides] = useState<HTMLLIElement[]>([]);
   const [isControlOnCooldown, setIsControlOnCooldown] = useState(false);
+  const [carouselSlides, setCarouselSlides] = useState<Element[]>([]);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const carouselRef = useRef<HTMLUListElement>(null);
@@ -31,9 +27,8 @@ export const useCarousel = () => {
       const previous = carouselSlides[currentSlide].previousElementSibling;
       const next = carouselSlides[currentSlide].nextElementSibling;
 
-      const previousSlide =
-        previous && previous && assertLiElement(previous) ? carouselSlides.indexOf(previous) : currentSlide;
-      const nextSlide = next && next && assertLiElement(next) ? carouselSlides.indexOf(next) : currentSlide;
+      const previousSlide = previous ? carouselSlides.indexOf(previous) : currentSlide;
+      const nextSlide = next ? carouselSlides.indexOf(next) : currentSlide;
       const index = direction === 'previous' ? previousSlide : nextSlide;
 
       scrollToSlide(index);
@@ -54,7 +49,7 @@ export const useCarousel = () => {
 
       setCurrentSlideIndex(0);
       carousel.scrollTo({ left: 0 });
-      setCarouselSlides(Array.from(carousel.getElementsByTagName('li')));
+      setCarouselSlides(() => Array.from(carousel.getElementsByTagName('li')));
     })();
   }, [pathname]);
 
@@ -63,9 +58,7 @@ export const useCarousel = () => {
 
     function callback(entries: IntersectionObserverEntry[]) {
       entries.forEach((slide) => {
-        slide.isIntersecting &&
-          assertLiElement(slide.target) &&
-          setCurrentSlideIndex(carouselSlides.indexOf(slide.target));
+        slide.isIntersecting && setCurrentSlideIndex(carouselSlides.indexOf(slide.target));
       });
     }
 
