@@ -287,6 +287,11 @@
 
 .nextButton {
   margin-left: auto;
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    background-color: transparentize(var.$coral, 0.5);
+  }
 }
 
 .headingWrapper {

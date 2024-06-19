@@ -33,6 +33,7 @@ type Answer = {
 type CareerProfilerControlButtons = {
   currentStatement: number;
   statementsAmount: number;
+  isNextQuestionDisabled: boolean;
   isCareerProfilerComplete: boolean;
   handleGoToNextSlice: () => void;
   handleGoToPreviousSlice: () => void;
@@ -95,6 +96,7 @@ export const CareerProfiler = () => {
               handleCalculateResults={handleCalculateResults}
               handleGoToPreviousSlice={handleGoToPreviousSlice}
               isCareerProfilerComplete={isCareerProfilerComplete}
+              isNextQuestionDisabled={Object.keys(currentAnswers).length < currentStatement}
             />
           </div>
         ) : (
@@ -164,6 +166,7 @@ export const Answer = ({ opinion, isCurrentAnswerActive, handleUpdateAnswer }: A
 const CareerProfilerControlButtons = ({
   currentStatement,
   statementsAmount,
+  isNextQuestionDisabled,
   isCareerProfilerComplete,
   handleGoToNextSlice,
   handleCalculateResults,
@@ -182,7 +185,12 @@ const CareerProfilerControlButtons = ({
         </button>
       )}
       {currentStatement < statementsAmount && (
-        <button className={styles.nextButton} onClick={handleGoToNextSlice}>
+        <button
+          onClick={handleGoToNextSlice}
+          className={styles.nextButton}
+          disabled={isNextQuestionDisabled}
+          data-disabled={isNextQuestionDisabled}
+        >
           Próximo
         </button>
       )}
