@@ -31,3 +31,9 @@ O objetivo principal é criar uma plataforma interativa e informativa para os al
 ## Screenshot
 
 ![HomePage](./screenshots/home-page.png)
+
+## Protótipo
+
+- Protótipo visual desenvolvido pelos alunos de Design no Figma, representando a estrutura e a identidade visual do site "Pontes do Futuro".
+
+![Prototype](./screenshots/prototype.png)
